@@ -16,7 +16,7 @@ const App: React.FC = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
 
   // Split name into parts for individual animation
-  const nameParts = ["MUHAMMAD", "SHAHEER", "JAMAL", "CHISHTI"];
+  const nameParts = ["Muhammad", "Shaheer", "Jamal", "Chishti"];
 
   return (
     <div className="min-h-screen text-slate-200 bg-black font-sans relative overflow-x-hidden selection:bg-cyan-500/30">
@@ -31,11 +31,7 @@ const App: React.FC = () => {
               key={index}
               className="group relative cursor-pointer"
             >
-              {/* THE TEXT ITSELF
-                  - Removed drop-shadow (No white glow)
-                  - Kept '-translate-y-2' (Smooth lift)
-                  - Kept 'bg-cool-spectrum' (Changing colors)
-              */}
+              {/* THE TEXT ITSELF */}
               <div className="
                 text-5xl md:text-7xl font-bold 
                 bg-cool-spectrum 
@@ -49,7 +45,7 @@ const App: React.FC = () => {
         </div>
 
         <p className="text-xl md:text-2xl text-slate-300 font-light mb-2 mt-2">
-          CLOUD DATA ENGINEER & DEVELOPER
+          Cloud Data Engineer & Developer
         </p>
         <p className="text-slate-500 text-sm md:text-base max-w-2xl mx-auto mb-8">
           Building scalable data pipelines with Kafka, Snowflake, and AWS.
@@ -118,7 +114,7 @@ const App: React.FC = () => {
               <i className="fas fa-times"></i>
             </button>
 
-            {/* BLOCK 1 CONTENT */}
+            {/* BLOCK 1 CONTENT: CDE */}
             {activeModal === 'cde' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">Cloud Data Engineering Projects</h2>
@@ -127,7 +123,7 @@ const App: React.FC = () => {
               </>
             )}
 
-            {/* BLOCK 2 CONTENT */}
+            {/* BLOCK 2 CONTENT: CERTS */}
             {activeModal === 'certs' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-8">Certifications</h2>
@@ -135,16 +131,17 @@ const App: React.FC = () => {
               </>
             )}
 
-            {/* BLOCK 3 CONTENT */}
+            {/* BLOCK 3 CONTENT: SOFTWARE (Updated color!) */}
             {activeModal === 'learn' && (
               <>
-                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400 mb-2">Software & Scripting Hub</h2>
-                <p className="text-slate-400 mb-6">General programming journey and learnings.</p>
-                <ProjectGrid projects={softwareProjects} color="cyan" />
+                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 mb-2">Software & Scripting Hub</h2>
+                <p className="text-slate-400 mb-6">General programming journey covering Java, C++, and Python automation.</p>
+                {/* Notice: color="emerald" for green glow */}
+                <ProjectGrid projects={softwareProjects} color="emerald" />
               </>
             )}
 
-            {/* BLOCK 4 CONTENT */}
+            {/* BLOCK 4 CONTENT: FREELANCE */}
             {activeModal === 'freelance' && (
                <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400 mb-2">Freelancing Projects</h2>

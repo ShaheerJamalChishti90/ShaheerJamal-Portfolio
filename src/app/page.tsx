@@ -45,7 +45,7 @@ const App: React.FC = () => {
           Building scalable data pipelines with Kafka, Snowflake, and AWS.
         </p>
         
-        {/* --- SOCIAL ICONS & EMAIL --- */}
+        {/* --- SOCIAL ICONS & DUAL EMAIL --- */}
         <div className="flex items-center gap-8 mb-8">
             
             {/* 1. YouTube */}
@@ -78,16 +78,24 @@ const App: React.FC = () => {
               <i className="fab fa-github"></i>
             </a>
 
-            {/* 4. Email (UPDATED: Opens Gmail in Browser) */}
+            {/* 4. Standard Email (Envelope Icon) - Best for Mobile Apps/Outlook */}
             <a 
-              // This special link forces Gmail to open in the browser
+              href="mailto:shaheer.jamal09@gmail.com" 
+              className="text-4xl text-slate-500 hover:text-[#EA4335] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" 
+              title="Send Email (App)"
+            >
+              <i className="fas fa-envelope"></i>
+            </a>
+
+            {/* 5. Web Gmail (Google Icon) - Best for PC Browser */}
+            <a 
               href="https://mail.google.com/mail/?view=cm&fs=1&to=shaheer.jamal09@gmail.com"
               target="_blank"
               rel="noopener noreferrer" 
               className="text-4xl text-slate-500 hover:text-[#EA4335] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" 
-              title="Send Email via Gmail"
+              title="Open in Gmail Web"
             >
-              <i className="fas fa-envelope"></i>
+              <i className="fab fa-google"></i>
             </a>
         </div>
 
@@ -95,7 +103,7 @@ const App: React.FC = () => {
         <div>
           <a 
             href="/resume.pdf" 
-            download="Shaheer_Jamal_Resume" // Forces browser to download the file
+            download="Shaheer_Jamal_Resume" 
             target="_blank"
             className="
               relative inline-flex items-center gap-3 px-8 py-3 
@@ -206,6 +214,15 @@ const App: React.FC = () => {
         )}
       </div>
 
+      {/* --- FOOTER --- */}
+      <footer className="text-center py-8 text-slate-600 text-sm relative z-10">
+        <p>
+          &copy; {new Date().getFullYear()} Muhammad Shaheer Jamal Chishti
+        </p>
+        <p className="mt-2">
+          Thankyou for visiting <i className="fas fa-heart text-red-900 mx-1"></i>
+        </p>
+      </footer>
     </div>
   );
 };

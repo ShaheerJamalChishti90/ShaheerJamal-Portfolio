@@ -49,3 +49,27 @@ body {
   color: var(--color-textMain);
   scroll-behavior: smooth;
 }
+
+/* src/app/globals.css */
+
+/* Define a slow spinning animation for the gradient borders */
+/* ... keep your existing @import and @theme settings ... */
+
+/* NEW: Liquid Flow Animation */
+@keyframes flow-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-flow {
+  /* Make the background huge so we can move it around */
+  background-size: 300% 300%;
+  animation: flow-gradient 3s ease infinite;
+}

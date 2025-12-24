@@ -16,7 +16,7 @@ const App: React.FC = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
 
   // Split name into parts for individual animation
-  const nameParts = ["Muhammad", "Shaheer", "Jamal", "Chishti"];
+  const nameParts = ["MUHAMMAD", "SHAHEER", "JAMAL", "CHISHTI"];
 
   return (
     <div className="min-h-screen text-slate-200 bg-black font-sans relative overflow-x-hidden selection:bg-cyan-500/30">
@@ -49,7 +49,7 @@ const App: React.FC = () => {
         </div>
 
         <p className="text-xl md:text-2xl text-slate-300 font-light mb-2 mt-2">
-          Cloud Data Engineer & Developer
+          CLOUD DATA ENGINEER & DEVELOPER
         </p>
         <p className="text-slate-500 text-sm md:text-base max-w-2xl mx-auto mb-8">
           Building scalable data pipelines with Kafka, Snowflake, and AWS.

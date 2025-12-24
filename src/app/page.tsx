@@ -51,12 +51,41 @@ const App: React.FC = () => {
           Building scalable data pipelines with Kafka, Snowflake, and AWS.
         </p>
         
-        {/* Social Icons */}
-        <div className="flex items-center gap-8">
-            <a href="#" target="_blank" className="text-4xl text-slate-500 hover:text-[#FF0000] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" title="YouTube"><i className="fab fa-youtube"></i></a>
-            <a href="https://linkedin.com/in/m-shaheer-jamal-chishti-b75307272" target="_blank" className="text-4xl text-slate-500 hover:text-[#0A66C2] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-blue-500/20 rounded-full" title="LinkedIn"><i className="fab fa-linkedin"></i></a>
-            <a href="https://github.com/ShaheerJamalChishti90" target="_blank" className="text-4xl text-slate-500 hover:text-white transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/20 rounded-full" title="GitHub"><i className="fab fa-github"></i></a>
+        {/* --- SOCIAL ICONS & EMAIL --- */}
+        <div className="flex items-center gap-8 mb-8">
+            {/* YouTube */}
+            <a href="https://www.youtube.com/@cdewithshaheer" className="text-4xl text-slate-500 hover:text-[#FF0000] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" title="YouTube"><i className="fab fa-youtube"></i></a>
+            
+            {/* LinkedIn */}
+            <a href="https://linkedin.com/in/m-shaheer-jamal-chishti-b75307272" className="text-4xl text-slate-500 hover:text-[#0A66C2] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-blue-500/20 rounded-full" title="LinkedIn"><i className="fab fa-linkedin"></i></a>
+            
+            {/* GitHub */}
+            <a href="https://github.com/ShaheerJamalChishti90" className="text-4xl text-slate-500 hover:text-white transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/20 rounded-full" title="GitHub"><i className="fab fa-github"></i></a>
+
+            {/* NEW: Email (Gmail) */}
+            {/* REPLACE 'your.email@gmail.com' WITH YOUR ACTUAL EMAIL BELOW */}
+            <a href="mailto:shaheerjamal09@gmail.com" className="text-4xl text-slate-500 hover:text-[#EA4335] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" title="Send Email"><i className="fas fa-envelope"></i></a>
         </div>
+
+        {/* --- RESUME DOWNLOAD BUTTON --- */}
+        <div>
+          <a 
+            href="/resume.pdf" 
+            download="Shaheer_Jamal_Resume" // This forces the download
+            className="
+              relative inline-flex items-center gap-3 px-8 py-3 
+              bg-zinc-900 border border-zinc-700 rounded-full 
+              text-slate-200 font-bold tracking-wide
+              transition-all duration-300
+              hover:bg-zinc-800 hover:text-white hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:-translate-y-1
+              group cursor-pointer
+            "
+          >
+            <i className="fas fa-file-alt group-hover:text-cyan-400 transition-colors"></i>
+            <span>Download Resume</span>
+          </a>
+        </div>
+
       </header>
 
       {/* --- MAIN 4-BLOCK GRID --- */}
@@ -114,7 +143,7 @@ const App: React.FC = () => {
               <i className="fas fa-times"></i>
             </button>
 
-            {/* BLOCK 1 CONTENT: CDE */}
+            {/* BLOCK 1 CONTENT */}
             {activeModal === 'cde' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">Cloud Data Engineering Projects</h2>
@@ -123,7 +152,7 @@ const App: React.FC = () => {
               </>
             )}
 
-            {/* BLOCK 2 CONTENT: CERTS */}
+            {/* BLOCK 2 CONTENT */}
             {activeModal === 'certs' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-8">Certifications</h2>
@@ -131,17 +160,16 @@ const App: React.FC = () => {
               </>
             )}
 
-            {/* BLOCK 3 CONTENT: SOFTWARE (Updated color!) */}
+            {/* BLOCK 3 CONTENT */}
             {activeModal === 'learn' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 mb-2">Software & Scripting Hub</h2>
-                <p className="text-slate-400 mb-6">General programming journey covering Java, C++, and Python automation.</p>
-                {/* Notice: color="emerald" for green glow */}
+                <p className="text-slate-400 mb-6">General programming journey and learnings.</p>
                 <ProjectGrid projects={softwareProjects} color="emerald" />
               </>
             )}
 
-            {/* BLOCK 4 CONTENT: FREELANCE */}
+            {/* BLOCK 4 CONTENT */}
             {activeModal === 'freelance' && (
                <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400 mb-2">Freelancing Projects</h2>

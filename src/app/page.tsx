@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 
-// --- UPDATED IMPORTS ---
-// Notice the path starts with './data/' because page.tsx is next to the data folder
+// --- IMPORTS ---
 import { cdeProjects } from './data/cde';
 import { freelanceProjects } from './data/freelance';
 import { softwareProjects } from './data/software';
@@ -11,6 +10,7 @@ import { certifications } from './data/certs';
 
 import MainBlock from '../components/MainBlock';     
 import ProjectGrid from '../components/ProjectGrid'; 
+import CertGrid from '../components/CertGrid'; // <--- NEW IMPORT
 
 const App: React.FC = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
@@ -102,22 +102,14 @@ const App: React.FC = () => {
               </>
             )}
 
-            {/* BLOCK 2 CONTENT */}
+            {/* BLOCK 2 CONTENT: CERTIFICATIONS */}
             {activeModal === 'certs' && (
               <>
-                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-6">Certifications</h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                  {certifications.map((cert) => (
-                    <div key={cert.id} className="bg-zinc-900 p-6 rounded-xl border border-zinc-800 hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-900/20">
-                      <div className="h-24 bg-zinc-800 mb-4 rounded flex items-center justify-center text-zinc-500 text-sm">
-                         {/* Replace this div with <img src={cert.image} /> when you have real images */}
-                         Image
-                      </div>
-                      <h3 className="font-bold text-slate-200">{cert.title}</h3>
-                      <p className="text-xs text-slate-500 mt-1">{cert.issuer}</p>
-                    </div>
-                  ))}
-                </div>
+                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-8">Certifications</h2>
+                
+                {/* JUST ONE LINE NOW: CLEAN AND SEPARATED */}
+                <CertGrid certificates={certifications} />
+                
               </>
             )}
 

@@ -71,5 +71,38 @@ body {
 .animate-gradient-flow {
   /* Make the background huge so we can move it around */
   background-size: 300% 300%;
-  animation: flow-gradient 3s ease infinite;
+  animation: flow-gradient 30s ease infinite;
+}
+
+/* 1. The Moving Flow Animation */
+@keyframes flow-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-flow {
+  background-size: 300% 300%;
+  animation: flow-gradient 30s ease infinite;
+}
+
+/* 2. Custom "Cool Spectrum" Gradient for TEXT */
+.bg-cool-spectrum {
+  /* The Cool Gradient Colors */
+  background-image: linear-gradient(
+    90deg,
+    #06b6d4, #0ea5e9, #3b82f6, #6366f1, #8b5cf6, /* Cyan -> Indigo */
+    #a855f7, #d946ef, #ec4899, #f43f5e, #e11d48, /* Purple -> Rose */
+    #fe4d01, #f10505, #a855f7, #8b5cf6, #6366f1, /* Loop Back... */
+    #3b82f6, #0ea5e9, #06b6d4
+  );
+  
+  /* CRITICAL: This clips the background to the text shape */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  
+  /* Make it move */
+  background-size: 300% 100%;
+  animation: flow-gradient 30s linear infinite;
 }

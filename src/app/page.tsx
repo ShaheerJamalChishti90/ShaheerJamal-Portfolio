@@ -10,20 +10,45 @@ import { certifications } from './data/certs';
 
 import MainBlock from '../components/MainBlock';     
 import ProjectGrid from '../components/ProjectGrid'; 
-import CertGrid from '../components/CertGrid'; // <--- NEW IMPORT
+import CertGrid from '../components/CertGrid';
 
 const App: React.FC = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
+
+  // Split name into parts for individual animation
+  const nameParts = ["Muhammad", "Shaheer", "Jamal", "Chishti"];
 
   return (
     <div className="min-h-screen text-slate-200 bg-black font-sans relative overflow-x-hidden selection:bg-cyan-500/30">
       
       {/* --- HEADER --- */}
       <header className="flex flex-col items-center justify-center pt-20 pb-12 px-4 text-center z-10 relative">
-        <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-lg leading-tight p-2">
-          Muhammad Shaheer Jamal Chishti
-        </h1>
-        <p className="text-xl md:text-2xl text-slate-300 font-light mb-2">
+        
+        {/* ANIMATED NAME CONTAINER */}
+        <div className="flex flex-wrap justify-center gap-3 md:gap-5 mb-4">
+          {nameParts.map((name, index) => (
+            <div 
+              key={index}
+              className="group relative cursor-pointer"
+            >
+              {/* THE TEXT ITSELF
+                  - Removed drop-shadow (No white glow)
+                  - Kept '-translate-y-2' (Smooth lift)
+                  - Kept 'bg-cool-spectrum' (Changing colors)
+              */}
+              <div className="
+                text-5xl md:text-7xl font-bold 
+                bg-cool-spectrum 
+                transition-all duration-500 ease-in-out
+                group-hover:-translate-y-2 
+              ">
+                {name}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-xl md:text-2xl text-slate-300 font-light mb-2 mt-2">
           Cloud Data Engineer & Developer
         </p>
         <p className="text-slate-500 text-sm md:text-base max-w-2xl mx-auto mb-8">
@@ -102,14 +127,11 @@ const App: React.FC = () => {
               </>
             )}
 
-            {/* BLOCK 2 CONTENT: CERTIFICATIONS */}
+            {/* BLOCK 2 CONTENT */}
             {activeModal === 'certs' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-8">Certifications</h2>
-                
-                {/* JUST ONE LINE NOW: CLEAN AND SEPARATED */}
                 <CertGrid certificates={certifications} />
-                
               </>
             )}
 

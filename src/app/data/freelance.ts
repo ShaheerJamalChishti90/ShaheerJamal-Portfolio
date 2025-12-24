@@ -5,7 +5,7 @@ export const freelanceProjects: Project[] = [
     id: 1, 
     title: "Attendance Management System (work in progress)", 
     desc: "A facial-recognition based application delivered to a client for automated employee attendance tracking.", 
-    links: { github: "#" } 
+    links: { youtube: "../coming-soon/youtube", github: "../coming-soon/github", linkedin: "../coming-soon/linkedin" } 
   },
   { 
     id: 2, 

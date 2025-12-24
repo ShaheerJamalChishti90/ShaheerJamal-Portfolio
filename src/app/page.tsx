@@ -14,8 +14,6 @@ import CertGrid from '../components/CertGrid';
 
 const App: React.FC = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
-
-  // Split name into parts for individual animation
   const nameParts = ["Muhammad", "Shaheer", "Jamal", "Chishti"];
 
   return (
@@ -27,11 +25,7 @@ const App: React.FC = () => {
         {/* ANIMATED NAME CONTAINER */}
         <div className="flex flex-wrap justify-center gap-3 md:gap-5 mb-4">
           {nameParts.map((name, index) => (
-            <div 
-              key={index}
-              className="group relative cursor-pointer"
-            >
-              {/* THE TEXT ITSELF */}
+            <div key={index} className="group relative cursor-pointer">
               <div className="
                 text-5xl md:text-7xl font-bold 
                 bg-cool-spectrum 
@@ -53,25 +47,56 @@ const App: React.FC = () => {
         
         {/* --- SOCIAL ICONS & EMAIL --- */}
         <div className="flex items-center gap-8 mb-8">
-            {/* YouTube */}
-            <a href="https://www.youtube.com/@cdewithshaheer" className="text-4xl text-slate-500 hover:text-[#FF0000] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" title="YouTube"><i className="fab fa-youtube"></i></a>
             
-            {/* LinkedIn */}
-            <a href="https://linkedin.com/in/m-shaheer-jamal-chishti-b75307272" className="text-4xl text-slate-500 hover:text-[#0A66C2] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-blue-500/20 rounded-full" title="LinkedIn"><i className="fab fa-linkedin"></i></a>
+            {/* 1. YouTube */}
+            <a 
+              href="https://www.youtube.com/@cdewithshaheer" 
+              target="_blank" 
+              className="text-4xl text-slate-500 hover:text-[#FF0000] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" 
+              title="YouTube"
+            >
+              <i className="fab fa-youtube"></i>
+            </a>
             
-            {/* GitHub */}
-            <a href="https://github.com/ShaheerJamalChishti90" className="text-4xl text-slate-500 hover:text-white transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/20 rounded-full" title="GitHub"><i className="fab fa-github"></i></a>
+            {/* 2. LinkedIn */}
+            <a 
+              href="https://www.linkedin.com/in/m-shaheer-jamal-chishti-b75307272" 
+              target="_blank" 
+              className="text-4xl text-slate-500 hover:text-[#0A66C2] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-blue-500/20 rounded-full" 
+              title="LinkedIn"
+            >
+              <i className="fab fa-linkedin"></i>
+            </a>
+            
+            {/* 3. GitHub */}
+            <a 
+              href="https://github.com/ShaheerJamalChishti90" 
+              target="_blank" 
+              className="text-4xl text-slate-500 hover:text-white transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/20 rounded-full" 
+              title="GitHub"
+            >
+              <i className="fab fa-github"></i>
+            </a>
 
-            {/* NEW: Email (Gmail) */}
-            {/* REPLACE 'your.email@gmail.com' WITH YOUR ACTUAL EMAIL BELOW */}
-            <a href="mailto:shaheerjamal09@gmail.com" className="text-4xl text-slate-500 hover:text-[#EA4335] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" title="Send Email"><i className="fas fa-envelope"></i></a>
+            {/* 4. Email (UPDATED: Opens Gmail in Browser) */}
+            <a 
+              // This special link forces Gmail to open in the browser
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=shaheer.jamal09@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="text-4xl text-slate-500 hover:text-[#EA4335] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" 
+              title="Send Email via Gmail"
+            >
+              <i className="fas fa-envelope"></i>
+            </a>
         </div>
 
         {/* --- RESUME DOWNLOAD BUTTON --- */}
         <div>
           <a 
             href="/resume.pdf" 
-            download="Shaheer_Jamal_Resume" // This forces the download
+            download="Shaheer_Jamal_Resume" // Forces browser to download the file
+            target="_blank"
             className="
               relative inline-flex items-center gap-3 px-8 py-3 
               bg-zinc-900 border border-zinc-700 rounded-full 
@@ -180,6 +205,7 @@ const App: React.FC = () => {
           </div>
         )}
       </div>
+
     </div>
   );
 };

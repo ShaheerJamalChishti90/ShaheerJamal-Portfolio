@@ -1,9 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
-import { cdeProjects, freelanceProjects } from '../data'; 
-import MainBlock from '../components/MainBlock';     // Import the Home Card
-import ProjectGrid from '../components/ProjectGrid'; // Import the Project List
+
+// --- UPDATED IMPORTS ---
+// Notice the path starts with './data/' because page.tsx is next to the data folder
+import { cdeProjects } from './data/cde';
+import { freelanceProjects } from './data/freelance';
+import { softwareProjects } from './data/software';
+import { certifications } from './data/certs';
+
+import MainBlock from '../components/MainBlock';     
+import ProjectGrid from '../components/ProjectGrid'; 
 
 const App: React.FC = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
@@ -11,7 +18,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen text-slate-200 bg-black font-sans relative overflow-x-hidden selection:bg-cyan-500/30">
       
-      {/* --- HEADER SECTION --- */}
+      {/* --- HEADER --- */}
       <header className="flex flex-col items-center justify-center pt-20 pb-12 px-4 text-center z-10 relative">
         <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-lg leading-tight p-2">
           Muhammad Shaheer Jamal Chishti
@@ -100,11 +107,16 @@ const App: React.FC = () => {
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-6">Certifications</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                  <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800 hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-900/20">
-                    <div className="h-24 bg-zinc-800 mb-4 rounded flex items-center justify-center">Image</div>
-                    <h3 className="font-bold text-slate-200">Snowflake Hands On</h3>
-                  </div>
-                  {/* Add more certs here manually or move to data.ts later */}
+                  {certifications.map((cert) => (
+                    <div key={cert.id} className="bg-zinc-900 p-6 rounded-xl border border-zinc-800 hover:border-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-900/20">
+                      <div className="h-24 bg-zinc-800 mb-4 rounded flex items-center justify-center text-zinc-500 text-sm">
+                         {/* Replace this div with <img src={cert.image} /> when you have real images */}
+                         Image
+                      </div>
+                      <h3 className="font-bold text-slate-200">{cert.title}</h3>
+                      <p className="text-xs text-slate-500 mt-1">{cert.issuer}</p>
+                    </div>
+                  ))}
                 </div>
               </>
             )}
@@ -114,10 +126,7 @@ const App: React.FC = () => {
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400 mb-2">Software & Scripting Hub</h2>
                 <p className="text-slate-400 mb-6">General programming journey and learnings.</p>
-                {/* Currently a placeholder, but you can pass data here later! */}
-                <div className="p-10 text-center text-slate-500 border-2 border-dashed border-zinc-800 rounded-xl">
-                  Content coming soon based on GitHub Repos...
-                </div>
+                <ProjectGrid projects={softwareProjects} color="cyan" />
               </>
             )}
 
@@ -126,7 +135,7 @@ const App: React.FC = () => {
                <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400 mb-2">Freelancing Projects</h2>
                 <p className="text-slate-400 mb-6">Real-world solutions delivered to clients.</p>
-                <ProjectGrid projects={freelanceProjects} />
+                <ProjectGrid projects={freelanceProjects} color="purple" />
               </>
             )}
           </div>

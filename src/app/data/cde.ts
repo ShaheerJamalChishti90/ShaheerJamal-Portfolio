@@ -1,18 +1,14 @@
-// src/data.ts
-
-// 1. Define what a "Project" looks like
 export interface Project {
   id: number;
   title: string;
   desc: string;
   links: {
-    youtube?: string;   // Optional: Link to video
-    github?: string;    // Optional: Link to code
-    linkedin?: string;  // Optional: Link to post
+    youtube?: string;
+    github?: string;
+    linkedin?: string;
   };
 }
 
-// 2. Your Cloud Data Engineering Projects (Block 1)
 export const cdeProjects: Project[] = [
   { 
     id: 14, 
@@ -80,32 +76,4 @@ export const cdeProjects: Project[] = [
     desc: "End-to-end integration testing and data validation within Snowflake.", 
     links: { github: "https://github.com/ShaheerJamalChishti90" } 
   }
-];
-
-// 3. Your Freelancing Projects (Block 4)
-export const freelanceProjects: Project[] = [
-  { 
-    id: 1, 
-    title: "Attendance Management System", 
-    desc: "A facial-recognition based application delivered to a client for automated employee attendance tracking.", 
-    links: { github: "#" } // Private repo
-  },
-  { 
-    id: 2, 
-    title: "Student Management System", 
-    desc: "Complete educational management portal developed for Al Quran Academy using React JS.", 
-    links: { github: "#" } // Private repo
-  }
-];
-
-// 4. Your Learning / Software Hub (Block 3)
-// You can add your smaller scripts or learning repos here later
-export const softwareProjects: Project[] = [
-  {
-    id: 1,
-    title: "Employee Payroll System",
-    desc: "Java OOP project demonstrating inheritance, encapsulation, and polymorphism.",
-    links: { github: "https://github.com/ShaheerJamalChishti90" }
-  },
-  // Add more C++, JS, or Python scripts here
 ];

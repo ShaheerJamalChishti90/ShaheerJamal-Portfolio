@@ -7,7 +7,8 @@ export const softwareProjects: Project[] = [
     desc: "A complete Java OOP application demonstrating Inheritance, Polymorphism, and Encapsulation to manage employee salaries.",
     links: { 
       github: "https://github.com/ShaheerJamalChishti90",
-      youtube: "/coming-soon/youtube"
+      youtube: "/coming-soon/youtube",
+      linkedin: "/coming-soon/linkedin"
     }
   },
   {
@@ -16,7 +17,8 @@ export const softwareProjects: Project[] = [
     desc: "A banking management system made on python.",
     links: { 
       github: "https://github.com/ShaheerJamalChishti90/Banking-Management-System-PF-Project",
-      youtube: "/coming-soon/youtube"
+      youtube: "/coming-soon/youtube",
+      linkedin: "/coming-soon/linkedin"
     }
   },
   {
@@ -25,7 +27,8 @@ export const softwareProjects: Project[] = [
     desc: "Bash and Python scripts for automating daily tasks on Linux Mint, including file organization and system monitoring.",
     links: { 
       github: "https://github.com/ShaheerJamalChishti90",
-      youtube: "/coming-soon/youtube"
+      youtube: "/coming-soon/youtube",
+      linkedin: "/coming-soon/linkedin"
     }
   },
   {
@@ -34,7 +37,8 @@ export const softwareProjects: Project[] = [
     desc: "Implementation of core Data Structures (Linked Lists, Stacks, Queues) and Algorithms using C++.",
     links: { 
       github: "https://github.com/ShaheerJamalChishti90",
-      youtube: "/coming-soon/youtube"
+      youtube: "/coming-soon/youtube",
+      linkedin: "/coming-soon/linkedin"
     }
   },
   {
@@ -43,7 +47,8 @@ export const softwareProjects: Project[] = [
     desc: "A C++ console-based application handling user accounts, transactions, and file handling for data persistence.",
     links: { 
       github: "https://github.com/ShaheerJamalChishti90",
-      youtube: "/coming-soon/youtube"
+      youtube: "/coming-soon/youtube",
+      linkedin: "/coming-soon/linkedin"
     }
   },
   {
@@ -52,7 +57,8 @@ export const softwareProjects: Project[] = [
     desc: "Various Python scripts utilizing Pandas and NumPy for basic data cleaning, transformation, and analysis tasks.",
     links: { 
       github: "https://github.com/ShaheerJamalChishti90",
-      youtube: "/coming-soon/youtube"
+      youtube: "/coming-soon/youtube",
+      linkedin: "/coming-soon/linkedin"
     }
   }
 ];

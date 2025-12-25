@@ -217,11 +217,11 @@ const App: React.FC = () => {
       {/* --- FOOTER --- */}
       <footer className="text-center py-8 text-slate-600 text-sm relative z-10">
         <p>
-          &copy; {new Date().getFullYear()} Muhammad Shaheer Jamal Chishti
+            MUHAMMAD SHAHEER JAMAL CHISHTI
         </p>
-        <p className="mt-2">
+        {/* <p className="mt-2">
           Thankyou for visiting <i className="fas fa-heart text-red-900 mx-1"></i>
-        </p>
+        </p> */}
       </footer>
     </div>
   );

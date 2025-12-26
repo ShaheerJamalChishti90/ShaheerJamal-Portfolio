@@ -8,8 +8,8 @@ import { freelanceProjects } from './data/freelance';
 import { softwareProjects } from './data/software';
 import { certifications } from './data/certs';
 
-import MainBlock from '../components/MainBlock';     
-import ProjectGrid from '../components/ProjectGrid'; 
+import MainBlock from '../components/MainBlock';
+import ProjectGrid from '../components/ProjectGrid';
 import CertGrid from '../components/CertGrid';
 
 const App: React.FC = () => {
@@ -81,7 +81,7 @@ const App: React.FC = () => {
             {/* 4. Standard Email (Envelope Icon) - Best for Mobile Apps/Outlook */}
             <a 
               href="mailto:shaheer.jamal09@gmail.com" 
-              className="text-4xl text-slate-500 hover:text-[#EA4335] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" 
+              className="text-4xl text-slate-500 hover:text-[#00ccff] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" 
               title="Send Email (App)"
             >
               <i className="fas fa-envelope"></i>
@@ -103,14 +103,14 @@ const App: React.FC = () => {
         <div>
           <a 
             href="/resume.pdf" 
-            download="Shaheer_Jamal_Resume" 
+            download="ShaheerJamal_Resume" 
             target="_blank"
             className="
               relative inline-flex items-center gap-3 px-8 py-3 
               bg-zinc-900 border border-zinc-700 rounded-full 
               text-slate-200 font-bold tracking-wide
               transition-all duration-300
-              hover:bg-zinc-800 hover:text-white hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:-translate-y-1
+              hover:bg-zinc-800 hover:border-cyan-500 hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:-translate-y-1
               group cursor-pointer
             "
           >

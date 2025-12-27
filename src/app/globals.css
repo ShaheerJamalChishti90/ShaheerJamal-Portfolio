@@ -50,11 +50,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* src/app/globals.css */
-
-/* Define a slow spinning animation for the gradient borders */
-/* ... keep your existing @import and @theme settings ... */
-
 /* NEW: Liquid Flow Animation */
 @keyframes flow-gradient {
   0% {

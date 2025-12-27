@@ -180,15 +180,17 @@ const App: React.FC = () => {
             {activeModal === 'cde' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">Cloud Data Engineering Projects</h2>
-                <p className="text-slate-400 mb-6">A collection of my 14+ projects involving modern data stack tools.</p>
-                <ProjectGrid projects={cdeProjects} />
+                <p className="text-slate-400">A collection of my 14+ projects involving modern data stack tools.</p>
+                <p className="text-red-500">Note: Some of the projects are uploaded on LinkedIn while others are not, none are on YouTube, but all projects are available on GitHub.</p>
+                <ProjectGrid projects={cdeProjects}/>
               </>
             )}
 
             {/* BLOCK 2 CONTENT */}
             {activeModal === 'certs' && (
               <>
-                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-8">Certifications</h2>
+                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-3">Certifications</h2>
+                <p className="text-red-500 mb-3">Note: All its videos will be uploaded on YouTube very soon. Stay connected!.</p>
                 <CertGrid certificates={certifications} />
               </>
             )}
@@ -197,7 +199,8 @@ const App: React.FC = () => {
             {activeModal === 'learn' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 mb-2">Software & Scripting Hub</h2>
-                <p className="text-slate-400 mb-6">General programming journey and learnings.</p>
+                <p className="text-slate-400">General programming journey and learnings. </p>
+                <p className="text-red-500">Note: Please check out the work on GitHub, as the YouTube videos and LinkedIn posts have not been published yet.</p>
                 <ProjectGrid projects={softwareProjects} color="emerald" />
               </>
             )}
@@ -206,7 +209,8 @@ const App: React.FC = () => {
             {activeModal === 'freelance' && (
                <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400 mb-2">Freelancing Projects</h2>
-                <p className="text-slate-400 mb-6">Real-world solutions delivered to clients.</p>
+                <p className="text-slate-400">Real-world solutions delivered to clients.</p>
+                <p className="text-red-500">Note: Please check out the work on GitHub, as the YouTube videos and LinkedIn posts have not been published yet.</p>
                 <ProjectGrid projects={freelanceProjects} color="purple" />
               </>
             )}

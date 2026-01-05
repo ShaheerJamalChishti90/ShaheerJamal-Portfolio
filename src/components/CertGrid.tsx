@@ -206,11 +206,11 @@ const CertGrid: React.FC<CertGridProps> = ({ certificates }) => {
           </button>
 
           {/* The Image */}
-          <img 
-            src={selectedImage} 
-            alt="Certificate Preview" 
+          <img
+            src={selectedImage}
+            alt="Certificate Preview"
             className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl shadow-cyan-500/20 animate-in zoom-in-95 duration-300"
-            onClick={(e) => e.stopPropagation()} 
+            onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}

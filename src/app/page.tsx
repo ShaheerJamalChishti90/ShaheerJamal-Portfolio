@@ -47,7 +47,6 @@ const App: React.FC = () => {
         
         {/* --- SOCIAL ICONS & DUAL EMAIL --- */}
         <div className="flex items-center gap-8 mb-8">
-            
             {/* 1. YouTube */}
             <a 
               href="https://www.youtube.com/@cdewithshaheer" 
@@ -78,7 +77,7 @@ const App: React.FC = () => {
               <i className="fab fa-github"></i>
             </a>
 
-            {/* 4. Standard Email (Envelope Icon) - Best for Mobile Apps/Outlook */}
+            {/* 4. Standard Email */}
             <a 
               href="mailto:shaheer.jamal09@gmail.com" 
               className="text-4xl text-slate-500 hover:text-[#00ccff] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" 
@@ -87,7 +86,7 @@ const App: React.FC = () => {
               <i className="fas fa-envelope"></i>
             </a>
 
-            {/* 5. Web Gmail (Google Icon) - Best for PC Browser */}
+            {/* 5. Web Gmail */}
             <a 
               href="https://mail.google.com/mail/?view=cm&fs=1&to=shaheer.jamal09@gmail.com"
               target="_blank"
@@ -110,7 +109,7 @@ const App: React.FC = () => {
               bg-zinc-900 border border-zinc-700 rounded-full 
               text-slate-200 font-bold tracking-wide
               transition-all duration-300
-              hover:bg-zinc-800 hover:border-cyan-500 hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:-translate-y-1
+              hover:bg-zinc-800 hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:-translate-y-1
               group cursor-pointer
             "
           >
@@ -137,7 +136,7 @@ const App: React.FC = () => {
         {/* Block 2: Certifications */}
         <MainBlock 
           title="Certifications"
-          desc="Snowflake Badges, AWS Certifications & Professional Milestones."
+          desc="Snowflake Badges, AWS Certifications & Other Professional Milestones."
           iconClass="fas fa-certificate"
           hoverTextColor="text-purple-400"
           gradientColors="from-purple-500 via-pink-600 to-fuchsia-600"
@@ -176,41 +175,53 @@ const App: React.FC = () => {
               <i className="fas fa-times"></i>
             </button>
 
-            {/* BLOCK 1 CONTENT */}
+            {/* BLOCK 1 CONTENT (CDE) */}
             {activeModal === 'cde' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">Cloud Data Engineering Projects</h2>
                 <p className="text-slate-400">A collection of my 14+ projects involving modern data stack tools.</p>
-                <p className="text-red-500">Note: Some of the projects are uploaded on LinkedIn while others are not, none are on YouTube, but all projects are available on GitHub.</p>
+                
+                {/* *** NEW STYLED NOTE *** */}
+                <div className="my-6 p-4 rounded-xl bg-red-950/20 border border-red-500/20 flex items-center gap-4 max-w-3xl">
+                  <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center flex-shrink-0">
+                    <i className="fab fa-youtube text-red-500 text-xl"></i>
+                  </div>
+                  <div>
+                    <h5 className="text-red-400 font-bold text-sm mb-0.5">Note</h5>
+                    <p className="text-red-300/80 text-sm leading-relaxed">
+                      Detailed video walkthroughs for these projects will be uploaded to my YouTube channel soon. Stay tuned!
+                    </p>
+                  </div>
+                </div>
+
                 <ProjectGrid projects={cdeProjects}/>
               </>
             )}
 
-            {/* BLOCK 2 CONTENT */}
+            {/* BLOCK 2 CONTENT (Certifications) */}
             {activeModal === 'certs' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-3">Certifications</h2>
-                <p className="text-red-500 mb-3">Note: All its videos will be uploaded on YouTube very soon. Stay connected!.</p>
                 <CertGrid certificates={certifications} />
               </>
             )}
 
-            {/* BLOCK 3 CONTENT */}
+            {/* BLOCK 3 CONTENT (Software) */}
             {activeModal === 'learn' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 mb-2">Software & Scripting Hub</h2>
                 <p className="text-slate-400">General programming journey and learnings. </p>
-                <p className="text-red-500">Note: Please check out the work on GitHub, as the YouTube videos and LinkedIn posts have not been published yet.</p>
+                <p className="text-red-500 mt-2 mb-4">Note: Please check out the work on GitHub, as the YouTube videos and LinkedIn posts have not been published yet.</p>
                 <ProjectGrid projects={softwareProjects} color="emerald" />
               </>
             )}
 
-            {/* BLOCK 4 CONTENT */}
+            {/* BLOCK 4 CONTENT (Freelance) */}
             {activeModal === 'freelance' && (
                <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400 mb-2">Freelancing Projects</h2>
                 <p className="text-slate-400">Real-world solutions delivered to clients.</p>
-                <p className="text-red-500">Note: Please check out the work on GitHub, as the YouTube videos and LinkedIn posts have not been published yet.</p>
+                <p className="text-red-500 mt-2 mb-4">Note: Please check out the work on GitHub, as the YouTube videos and LinkedIn posts have not been published yet.</p>
                 <ProjectGrid projects={freelanceProjects} color="purple" />
               </>
             )}
@@ -220,9 +231,6 @@ const App: React.FC = () => {
 
       {/* --- FOOTER --- */}
       <footer className="text-center py-8 text-slate-600 text-sm relative z-10">
-        {/* <p>
-            MUHAMMAD SHAHEER JAMAL CHISHTI
-        </p> */}
         <p className="mt-2">
           Thankyou for visiting <i className="fas fa-heart text-red-900 mx-1"></i>
         </p>

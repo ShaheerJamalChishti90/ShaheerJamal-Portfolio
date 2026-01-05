@@ -20,7 +20,12 @@ export const certifications: Certificate[] = [
     issuer: "Snowflake",
     type: 'snowflake'
   },
-  // Add AWS or other categories here later
+  {
+    id: 2,
+    title: "Other Professional Achievements",
+    issuer: "Various",
+    type: 'other'
+  },
 ];
 
 // 2. The Detailed Badges
@@ -56,4 +61,19 @@ export const snowflakeBadges: Badge[] = [
     image: "/images/Collaboration and Marketplace.png", 
     link: "https://www.credential.net/profile/muhammadshaheerjamalchishti487127/wallet" 
   },
+];
+
+export const otherBadges: Badge[] = [
+  {
+    id: 1,
+    title: "AI Tools for Productivity",
+    image: "/images/Certificates/ai_tools.png",
+    link: "#"
+  },
+  {
+    id: 2,
+    title: "Cybersecurity Awareness",
+    image: "/images/Certificates/cys_awareness.png",
+    link: "#"
+  }
 ];

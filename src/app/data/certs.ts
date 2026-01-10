@@ -75,6 +75,12 @@ export const professionalCerts: Badge[] = [
     title: "Cloud Data Engineering",
     image: "/images/Certificates/cde.png",
     link: "#"
+  },
+  {
+    id: 2,
+    title: "Prompt Engineering with Github Copilot",
+    image: "/images/Certificates/prompt_engineering.png",
+    link: "#"
   }
 ];
 

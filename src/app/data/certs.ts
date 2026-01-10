@@ -81,6 +81,12 @@ export const professionalCerts: Badge[] = [
     title: "Prompt Engineering with Github Copilot",
     image: "/images/Certificates/prompt_engineering.png",
     link: "#"
+  },
+  {
+    id: 3,
+    title: "Beginners guide to Ethical Hacking",
+    image: "/images/Certificates/beginners_guide_to_ethicalhacking.png",
+    link: "#"
   }
 ];
 

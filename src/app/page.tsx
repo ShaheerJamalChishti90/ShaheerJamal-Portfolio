@@ -8,9 +8,13 @@ import { freelanceProjects } from './data/freelance';
 import { softwareProjects } from './data/software';
 import { certifications } from './data/certs';
 
-import MainBlock from '../components/MainBlock';
-import ProjectGrid from '../components/ProjectGrid';
+import MainBlock from '../components/MainBlock';     
+import ProjectGrid from '../components/ProjectGrid'; 
 import CertGrid from '../components/CertGrid';
+
+// --- ICON IMPORTS ---
+import { FaYoutube, FaLinkedin, FaGithub, FaEnvelope, FaGoogle, FaFileAlt, FaTimes, FaHeart } from 'react-icons/fa';
+import { SiFiverr } from 'react-icons/si'; // Official Fiverr Brand Icon
 
 const App: React.FC = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
@@ -41,12 +45,15 @@ const App: React.FC = () => {
         <p className="text-xl md:text-2xl text-slate-300 font-light mb-2 mt-2">
           Cloud Data Engineer & Developer
         </p>
-        <p className="text-slate-500 text-sm md:text-base max-w-2xl mx-auto mb-8">
-          Building scalable data pipelines with Kafka, Snowflake, and AWS.
+        
+        {/* UPDATED DESCRIPTION */}
+        <p className="text-slate-500 text-sm md:text-base max-w-2xl mx-auto mb-8 px-4">
+          Building scalable data pipelines with Kafka, Snowflake, & AWS, and developing robust software & mobile applications.
         </p>
         
-        {/* --- SOCIAL ICONS & DUAL EMAIL --- */}
-        <div className="flex items-center gap-8 mb-8">
+        {/* --- SOCIAL ICONS --- */}
+        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 mb-8">
+            
             {/* 1. YouTube */}
             <a 
               href="https://www.youtube.com/@cdewithshaheer" 
@@ -54,7 +61,7 @@ const App: React.FC = () => {
               className="text-4xl text-slate-500 hover:text-[#FF0000] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" 
               title="YouTube"
             >
-              <i className="fab fa-youtube"></i>
+              <FaYoutube />
             </a>
             
             {/* 2. LinkedIn */}
@@ -64,7 +71,7 @@ const App: React.FC = () => {
               className="text-4xl text-slate-500 hover:text-[#0A66C2] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-blue-500/20 rounded-full" 
               title="LinkedIn"
             >
-              <i className="fab fa-linkedin"></i>
+              <FaLinkedin />
             </a>
             
             {/* 3. GitHub */}
@@ -74,27 +81,38 @@ const App: React.FC = () => {
               className="text-4xl text-slate-500 hover:text-white transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/20 rounded-full" 
               title="GitHub"
             >
-              <i className="fab fa-github"></i>
+              <FaGithub />
             </a>
 
-            {/* 4. Standard Email */}
+            {/* 4. Fiverr (UPDATED: Larger Size) */}
             <a 
-              href="mailto:shaheer.jamal09@gmail.com" 
-              className="text-4xl text-slate-500 hover:text-[#00ccff] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" 
+              href="https://www.fiverr.com/shaheerjamal90" 
+              target="_blank" 
+              // CHANGED: 'text-4xl' -> 'text-6xl' and added '-mt-2' for alignment
+              className="text-6xl text-slate-500 hover:text-[#1DBF73] transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#1DBF73]/20 rounded-full flex items-center justify-center -mt-2" 
+              title="Hire me on Fiverr"
+            >
+              <SiFiverr />
+            </a>
+
+            {/* 5. Standard Email (App) */}
+            <a 
+              href="mailto:shaheerjamalchishti@gmail.com" 
+              className="text-4xl text-slate-500 hover:text-[#EA4335] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" 
               title="Send Email (App)"
             >
-              <i className="fas fa-envelope"></i>
+              <FaEnvelope />
             </a>
 
-            {/* 5. Web Gmail */}
+            {/* 6. Web Gmail (Browser) */}
             <a 
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=shaheer.jamal09@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=shaheerjamalchishti@gmail.com"
               target="_blank"
               rel="noopener noreferrer" 
               className="text-4xl text-slate-500 hover:text-[#EA4335] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" 
               title="Open in Gmail Web"
             >
-              <i className="fab fa-google"></i>
+              <FaGoogle />
             </a>
         </div>
 
@@ -102,18 +120,18 @@ const App: React.FC = () => {
         <div>
           <a 
             href="/resume.pdf" 
-            download="ShaheerJamal_Resume" 
+            download="Shaheer_Jamal_Resume" 
             target="_blank"
             className="
               relative inline-flex items-center gap-3 px-8 py-3 
               bg-zinc-900 border border-zinc-700 rounded-full 
               text-slate-200 font-bold tracking-wide
               transition-all duration-300
-              hover:bg-zinc-800 hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:-translate-y-1
+              hover:bg-zinc-800 hover:text-white hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:-translate-y-1
               group cursor-pointer
             "
           >
-            <i className="fas fa-file-alt group-hover:text-cyan-400 transition-colors"></i>
+            <FaFileAlt className="group-hover:text-cyan-400 transition-colors" />
             <span>Download Resume</span>
           </a>
         </div>
@@ -136,7 +154,7 @@ const App: React.FC = () => {
         {/* Block 2: Certifications */}
         <MainBlock 
           title="Certifications"
-          desc="Snowflake Badges, AWS Certifications & Other Professional Milestones."
+          desc="Snowflake Badges, AWS Certifications & Professional Milestones."
           iconClass="fas fa-certificate"
           hoverTextColor="text-purple-400"
           gradientColors="from-purple-500 via-pink-600 to-fuchsia-600"
@@ -172,56 +190,40 @@ const App: React.FC = () => {
               onClick={() => setActiveModal(null)}
               className="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl transition-all duration-300 hover:rotate-90 hover:scale-110"
             >
-              <i className="fas fa-times"></i>
+              <FaTimes />
             </button>
 
-            {/* BLOCK 1 CONTENT (CDE) */}
+            {/* BLOCK 1 CONTENT */}
             {activeModal === 'cde' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">Cloud Data Engineering Projects</h2>
-                <p className="text-slate-400">A collection of my 14+ projects involving modern data stack tools.</p>
-                
-                {/* *** NEW STYLED NOTE *** */}
-                <div className="my-6 p-4 rounded-xl bg-red-950/20 border border-red-500/20 flex items-center gap-4 max-w-3xl">
-                  <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center flex-shrink-0">
-                    <i className="fab fa-youtube text-red-500 text-xl"></i>
-                  </div>
-                  <div>
-                    <h5 className="text-red-400 font-bold text-sm mb-0.5">Note</h5>
-                    <p className="text-red-300/80 text-sm leading-relaxed">
-                      Detailed video walkthroughs for these projects will be uploaded to my YouTube channel soon. Stay tuned!
-                    </p>
-                  </div>
-                </div>
-
-                <ProjectGrid projects={cdeProjects}/>
+                <p className="text-slate-400 mb-6">A collection of my 14+ projects involving modern data stack tools.</p>
+                <ProjectGrid projects={cdeProjects} />
               </>
             )}
 
-            {/* BLOCK 2 CONTENT (Certifications) */}
+            {/* BLOCK 2 CONTENT */}
             {activeModal === 'certs' && (
               <>
-                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-3">Certifications</h2>
+                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-8">Certifications</h2>
                 <CertGrid certificates={certifications} />
               </>
             )}
 
-            {/* BLOCK 3 CONTENT (Software) */}
+            {/* BLOCK 3 CONTENT */}
             {activeModal === 'learn' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 mb-2">Software & Scripting Hub</h2>
-                <p className="text-slate-400">General programming journey and learnings. </p>
-                <p className="text-red-500 mt-2 mb-4">Note: Please check out the work on GitHub, as the YouTube videos and LinkedIn posts have not been published yet.</p>
+                <p className="text-slate-400 mb-6">General programming journey and learnings.</p>
                 <ProjectGrid projects={softwareProjects} color="emerald" />
               </>
             )}
 
-            {/* BLOCK 4 CONTENT (Freelance) */}
+            {/* BLOCK 4 CONTENT */}
             {activeModal === 'freelance' && (
                <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400 mb-2">Freelancing Projects</h2>
-                <p className="text-slate-400">Real-world solutions delivered to clients.</p>
-                <p className="text-red-500 mt-2 mb-4">Note: Please check out the work on GitHub, as the YouTube videos and LinkedIn posts have not been published yet.</p>
+                <p className="text-slate-400 mb-6">Real-world solutions delivered to clients.</p>
                 <ProjectGrid projects={freelanceProjects} color="purple" />
               </>
             )}
@@ -231,8 +233,11 @@ const App: React.FC = () => {
 
       {/* --- FOOTER --- */}
       <footer className="text-center py-8 text-slate-600 text-sm relative z-10">
-        <p className="mt-2">
-          Thankyou for visiting <i className="fas fa-heart text-red-900 mx-1"></i>
+        {/* <p>
+          &copy; {new Date().getFullYear()} Shaheer Jamal. All rights reserved.
+        </p> */}
+        <p className="mt-2 flex items-center justify-center gap-1">
+          Thankyou <FaHeart className="text-red-900 mx-1" /> for visiting.
         </p>
       </footer>
     </div>

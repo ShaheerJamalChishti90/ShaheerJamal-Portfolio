@@ -102,5 +102,11 @@ export const otherBadges: Badge[] = [
     title: "Cybersec. Awareness",
     image: "/images/Certificates/cys_awareness.png",
     link: "#"
+  },
+  {
+    id: 3,
+    title: "Career Planning for Tech Students",
+    image: "/images/Certificates/career_planning.png",
+    link: "#"
   }
 ];

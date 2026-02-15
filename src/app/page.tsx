@@ -12,9 +12,8 @@ import MainBlock from '../components/MainBlock';
 import ProjectGrid from '../components/ProjectGrid'; 
 import CertGrid from '../components/CertGrid';
 
-// --- ICON IMPORTS ---
+// --- ICON IMPORTS (Fiverr removed) ---
 import { FaYoutube, FaLinkedin, FaGithub, FaEnvelope, FaGoogle, FaFileAlt, FaTimes, FaHeart } from 'react-icons/fa';
-import { SiFiverr } from 'react-icons/si'; // Official Fiverr Brand Icon
 
 const App: React.FC = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
@@ -46,15 +45,13 @@ const App: React.FC = () => {
           Cloud Data Engineer & Developer
         </p>
         
-        {/* UPDATED DESCRIPTION */}
         <p className="text-slate-500 text-sm md:text-base max-w-2xl mx-auto mb-8 px-4">
           Building scalable data pipelines with Kafka, Snowflake, & AWS, and developing robust software & mobile applications.
         </p>
         
-        {/* --- SOCIAL ICONS --- */}
+        {/* --- SOCIAL ICONS (Reverted to gentle pop-up, no rotation, Fiverr removed) --- */}
         <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 mb-8">
             
-            {/* 1. YouTube */}
             <a 
               href="https://www.youtube.com/@cdewithshaheer" 
               target="_blank" 
@@ -64,7 +61,6 @@ const App: React.FC = () => {
               <FaYoutube />
             </a>
             
-            {/* 2. LinkedIn */}
             <a 
               href="https://www.linkedin.com/in/m-shaheer-jamal-chishti-b75307272" 
               target="_blank" 
@@ -74,7 +70,6 @@ const App: React.FC = () => {
               <FaLinkedin />
             </a>
             
-            {/* 3. GitHub */}
             <a 
               href="https://github.com/ShaheerJamalChishti90" 
               target="_blank" 
@@ -84,27 +79,15 @@ const App: React.FC = () => {
               <FaGithub />
             </a>
 
-            {/* 4. Fiverr (UPDATED: Larger Size) */}
-            <a 
-              href="https://www.fiverr.com/shaheerjamal90" 
-              target="_blank" 
-              // CHANGED: 'text-4xl' -> 'text-6xl' and added '-mt-2' for alignment
-              className="text-6xl text-slate-500 hover:text-[#1DBF73] transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#1DBF73]/20 rounded-full flex items-center justify-center -mt-2" 
-              title="Hire me on Fiverr"
-            >
-              <SiFiverr />
-            </a>
-
-            {/* 5. Standard Email (App) */}
+            {/* Microsoft Blue Email */}
             <a 
               href="mailto:shaheerjamalchishti@gmail.com" 
-              className="text-4xl text-slate-500 hover:text-[#EA4335] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" 
+              className="text-4xl text-slate-500 hover:text-[#0078D4] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-[#0078D4]/20 rounded-full" 
               title="Send Email (App)"
             >
               <FaEnvelope />
             </a>
 
-            {/* 6. Web Gmail (Browser) */}
             <a 
               href="https://mail.google.com/mail/?view=cm&fs=1&to=shaheerjamalchishti@gmail.com"
               target="_blank"
@@ -141,7 +124,6 @@ const App: React.FC = () => {
       {/* --- MAIN 4-BLOCK GRID --- */}
       <main className="max-w-7xl mx-auto px-6 pb-20 grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
         
-        {/* Block 1: CDE Projects */}
         <MainBlock 
           title="Cloud Data Engineering"
           desc="14+ End-to-End Projects featuring AWS, Kafka, Airflow & Snowflake."
@@ -151,7 +133,6 @@ const App: React.FC = () => {
           onClick={() => setActiveModal('cde')}
         />
 
-        {/* Block 2: Certifications */}
         <MainBlock 
           title="Certifications"
           desc="Snowflake Badges, AWS Certifications & Professional Milestones."
@@ -161,7 +142,6 @@ const App: React.FC = () => {
           onClick={() => setActiveModal('certs')}
         />
 
-        {/* Block 3: Software Hub */}
         <MainBlock 
           title="Software & Scripting Hub"
           desc="My playground for Python, JS, Java, C++, and HTML/CSS."
@@ -171,15 +151,28 @@ const App: React.FC = () => {
           onClick={() => setActiveModal('learn')}
         />
 
-        {/* Block 4: Freelancing */}
         <MainBlock 
           title="Freelancing Projects"
           desc="Client deliverables including Attendance & Student Management Systems."
           iconClass="fas fa-briefcase"
           hoverTextColor="text-orange-400"
-          gradientColors="from-purple-600 via-red-500 to-orange-500"
+          gradientColors="from-orange-400 via-red-500 to-yellow-500"
           onClick={() => setActiveModal('freelance')}
         />
+
+        {/* === NEW 5TH BLOCK: CENTERED AT BOTTOM === */}
+        <div className="md:col-span-2 flex justify-center mt-4">
+          <div className="w-full md:w-2/3 lg:w-1/2">
+            <MainBlock 
+              title="Hire Me & Contact"
+              desc="Let's build something amazing together. Reach out for services, consulting, or just a quick chat!"
+              iconClass="fas fa-handshake"
+              hoverTextColor="text-pink-400"
+              gradientColors="from-pink-500 via-rose-500 to-red-500"
+              onClick={() => setActiveModal('contact')}
+            />
+          </div>
+        </div>
       </main>
 
       {/* --- MODALS OVERLAY --- */}
@@ -227,17 +220,56 @@ const App: React.FC = () => {
                 <ProjectGrid projects={freelanceProjects} color="purple" />
               </>
             )}
+
+            {/* === BLOCK 5 CONTENT (HIRE ME / CONTACT) === */}
+            {activeModal === 'contact' && (
+              <div className="max-w-4xl mx-auto pt-4">
+                <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-rose-500 mb-4 text-center">Let's Work Together</h2>
+                <p className="text-slate-400 mb-10 text-center max-w-2xl mx-auto text-lg leading-relaxed">
+                  Choose how you'd like to connect. We can discuss custom software solutions, data engineering architectures, or project timelines.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  
+                  {/* Option 1: Contact Form */}
+                  <div className="bg-zinc-900/80 border border-zinc-800 p-8 rounded-2xl flex flex-col items-center text-center hover:border-pink-500/50 transition-all duration-300 group hover:-translate-y-1 shadow-lg">
+                    <div className="w-20 h-20 bg-pink-500/10 rounded-full flex items-center justify-center mb-6 text-pink-400 text-3xl group-hover:scale-110 transition-transform">
+                      <i className="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-200 mb-3 group-hover:text-pink-400 transition-colors">Send a Message</h3>
+                    <p className="text-sm text-slate-400 mb-8 leading-relaxed">Fill out a quick form to send an email directly to my inbox. Perfect for project inquiries, quotes, or general questions.</p>
+                    
+                    <button className="mt-auto px-6 py-4 w-full bg-zinc-800 hover:bg-pink-600 text-slate-200 hover:text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-pink-500/25 flex justify-center items-center gap-3">
+                      <span>Open Contact Form</span>
+                      <i className="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+
+                  {/* Option 2: Calendly Meeting */}
+                  <div className="bg-zinc-900/80 border border-zinc-800 p-8 rounded-2xl flex flex-col items-center text-center hover:border-blue-500/50 transition-all duration-300 group hover:-translate-y-1 shadow-lg">
+                     <div className="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center mb-6 text-blue-400 text-3xl group-hover:scale-110 transition-transform">
+                      <i className="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-200 mb-3 group-hover:text-blue-400 transition-colors">Book a Meeting</h3>
+                    <p className="text-sm text-slate-400 mb-8 leading-relaxed">Schedule a 1-on-1 video call at your convenience using Calendly to discuss your needs and project scope in detail.</p>
+                    
+                    <button className="mt-auto px-6 py-4 w-full bg-zinc-800 hover:bg-blue-600 text-slate-200 hover:text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-blue-500/25 flex justify-center items-center gap-3">
+                      <span>Schedule on Calendly</span>
+                      <i className="fas fa-arrow-right"></i>
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
 
       {/* --- FOOTER --- */}
       <footer className="text-center py-8 text-slate-600 text-sm relative z-10">
-        {/* <p>
-          &copy; {new Date().getFullYear()} Shaheer Jamal. All rights reserved.
-        </p> */}
         <p className="mt-2 flex items-center justify-center gap-1">
-          Thankyou <FaHeart className="text-red-900 mx-1" /> for visiting.
+          Thank you <FaHeart className="text-red-900 mx-1" /> for visiting.
         </p>
       </footer>
     </div>

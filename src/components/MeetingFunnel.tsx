@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaArrowLeft, FaCalendarAlt, FaCheckCircle, FaExclamationCircle, FaSpinner, FaArrowRight } from 'react-icons/fa';
 
-// 🔴 PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE 🔴
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxSzg2eO5DeoQ-WJ5yDVLAPHQNneEMq62s1mW7_ghEtqR7YCD1MQTM_slM9HNWDoldqxw/exec"; 
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzPsehg3fHhoSC6TUneeIc2cVKzOxSuCLO_GH6LVkZo05_fFAVlAQVAVODFxHcvN4GfQ/exec";
 
 interface MeetingFunnelProps {
   onBack: () => void;
@@ -12,12 +11,12 @@ interface MeetingFunnelProps {
 const MeetingFunnel: React.FC<MeetingFunnelProps> = ({ onBack }) => {
   const [meetingData, setMeetingData] = useState({ name: '', email: '', phone: '', country: '', service: '', customService: '', date: '', time: '' });
   const [meetingStatus, setMeetingStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState(''); // NEW
   
   const [bookedSlots, setBookedSlots] = useState<{date: string, time: string}[]>([]);
   const [isTimeConflict, setIsTimeConflict] = useState(false);
   const [isLoadingSlots, setIsLoadingSlots] = useState(true);
 
-  // Fetch taken slots immediately when component mounts
   useEffect(() => {
     fetch(GOOGLE_SCRIPT_URL)
       .then(res => res.json())
@@ -31,7 +30,6 @@ const MeetingFunnel: React.FC<MeetingFunnelProps> = ({ onBack }) => {
       });
   }, []);
 
-  // Check for conflicts
   useEffect(() => {
     if (meetingData.date && meetingData.time) {
       const conflict = bookedSlots.some(slot => slot.date === meetingData.date && slot.time === meetingData.time);
@@ -58,15 +56,20 @@ const MeetingFunnel: React.FC<MeetingFunnelProps> = ({ onBack }) => {
       if (result.success) {
         setMeetingStatus('success');
         setMeetingData({ name: '', email: '', phone: '', country: '', service: '', customService: '', date: '', time: '' }); 
-      } else setMeetingStatus('error');
-    } catch (error) { setMeetingStatus('error'); }
+      } else {
+        setErrorMessage(result.error || "System error.");
+        setMeetingStatus('error');
+      }
+    } catch (error: any) { 
+      setErrorMessage(error.message || "Network error.");
+      setMeetingStatus('error'); 
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setMeetingData({ ...meetingData, [e.target.name]: e.target.value });
   };
 
-  // Expanded Time Slots: 8 AM to 8 PM PST
   const timeSlots = [
     "08:00 AM PST", "09:00 AM PST", "10:00 AM PST", "11:00 AM PST", 
     "12:00 PM PST", "01:00 PM PST", "02:00 PM PST", "03:00 PM PST", 
@@ -86,7 +89,6 @@ const MeetingFunnel: React.FC<MeetingFunnelProps> = ({ onBack }) => {
 
       {meetingStatus === 'success' ? (
         <div className="bg-[#111113] border border-blue-500/30 rounded-2xl p-12 text-center animate-in zoom-in-95 duration-300 shadow-[0_0_30px_rgba(59,130,246,0.15)]">
-          {/* Added the vivid confirmation green checkmark */}
           <FaCheckCircle className="text-green-500 text-5xl mx-auto mb-6 drop-shadow-[0_0_15px_rgba(34,197,94,0.4)]" />
           <h3 className="text-2xl font-bold text-white mb-2">Meeting Slot Confirmed</h3>
           <p className="text-zinc-400">Your meeting request for <strong className="text-slate-200">{meetingData.date}</strong> at <strong className="text-slate-200">{meetingData.time}</strong> has been logged in my database. I will review it shortly.</p>
@@ -96,7 +98,7 @@ const MeetingFunnel: React.FC<MeetingFunnelProps> = ({ onBack }) => {
         <form onSubmit={handleSubmit} className="space-y-6">
           {meetingStatus === 'error' && (
             <div className="bg-red-950/30 border border-red-900/50 text-red-400 px-4 py-3 text-sm rounded-lg flex items-center gap-3">
-              <FaExclamationCircle /> <span>System error. Please try again later.</span>
+              <FaExclamationCircle className="flex-shrink-0" /> <span>{errorMessage}</span>
             </div>
           )}
           
@@ -104,7 +106,6 @@ const MeetingFunnel: React.FC<MeetingFunnelProps> = ({ onBack }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="relative">
                 <label className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2 flex items-center gap-2"><FaCalendarAlt /> Date *</label>
-                {/* Added [color-scheme:dark] to force the premium dark mode calendar UI */}
                 <input 
                   type="date" 
                   name="date" 

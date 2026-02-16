@@ -2,8 +2,7 @@
 import React, { useState } from 'react';
 import { FaArrowLeft, FaCheckCircle, FaExclamationCircle, FaSpinner, FaEnvelope } from 'react-icons/fa';
 
-// 🔴 PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE 🔴
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxSzg2eO5DeoQ-WJ5yDVLAPHQNneEMq62s1mW7_ghEtqR7YCD1MQTM_slM9HNWDoldqxw/exec"; 
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzPsehg3fHhoSC6TUneeIc2cVKzOxSuCLO_GH6LVkZo05_fFAVlAQVAVODFxHcvN4GfQ/exec";
 
 interface InquiryFormProps {
   onBack: () => void;
@@ -12,6 +11,7 @@ interface InquiryFormProps {
 const InquiryForm: React.FC<InquiryFormProps> = ({ onBack }) => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '', country: '', city: '', message: '' });
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState(''); // NEW
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,8 +26,14 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ onBack }) => {
       if (result.success) {
         setFormStatus('success');
         setFormData({ name: '', email: '', phone: '', company: '', country: '', city: '', message: '' }); 
-      } else setFormStatus('error');
-    } catch (error) { setFormStatus('error'); }
+      } else {
+        setErrorMessage(result.error || "System error.");
+        setFormStatus('error');
+      }
+    } catch (error: any) { 
+      setErrorMessage(error.message || "Network Error.");
+      setFormStatus('error'); 
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -47,7 +53,6 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ onBack }) => {
 
       {formStatus === 'success' ? (
         <div className="bg-[#111113] border border-cyan-500/30 p-12 rounded-2xl text-center animate-in zoom-in-95 duration-300">
-          {/* Confimation Checkmark */}
           <FaCheckCircle className="text-green-500 text-5xl mx-auto mb-6 drop-shadow-[0_0_15px_rgba(34,197,94,0.4)]" />
           <h3 className="text-2xl font-bold text-white mb-2">Inquiry Confirmed</h3>
           <p className="text-zinc-400">Thank you. Your message has been routed to my inbox. Expect a response shortly.</p>
@@ -57,7 +62,7 @@ const InquiryForm: React.FC<InquiryFormProps> = ({ onBack }) => {
         <form onSubmit={handleSubmit} className="space-y-8">
           {formStatus === 'error' && (
             <div className="bg-red-950/30 border border-red-900/50 text-red-400 px-4 py-3 text-sm rounded-lg flex items-center gap-3">
-              <FaExclamationCircle /> <span>System error. Please try again later or email directly.</span>
+              <FaExclamationCircle className="flex-shrink-0" /> <span>{errorMessage}</span>
             </div>
           )}
           

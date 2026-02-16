@@ -53,11 +53,11 @@ const App: React.FC = () => {
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shaheerjamalchishti@gmail.com" target="_blank" rel="noopener noreferrer" className="text-4xl text-slate-500 hover:text-[#EA4335] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" title="Open in Gmail Web"><FaGoogle /></a>
         </div>
 
-        {/* --- RESUME DOWNLOAD BUTTON --- */}
+        {/* --- RESUME VIEW BUTTON --- */}
         <div>
-          <a href="/resume.pdf" download="Shaheer_Jamal_Resume" target="_blank" className="relative inline-flex items-center gap-3 px-8 py-3 bg-zinc-900 border border-zinc-700 rounded-full text-slate-200 font-bold tracking-wide transition-all duration-300 hover:bg-zinc-800 hover:text-white hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:-translate-y-1 group cursor-pointer">
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="relative inline-flex items-center gap-3 px-8 py-3 bg-zinc-900 border border-zinc-700 rounded-full text-slate-200 font-bold tracking-wide transition-all duration-300 hover:bg-zinc-800 hover:text-white hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:-translate-y-1 group cursor-pointer">
             <FaFileAlt className="group-hover:text-cyan-400 transition-colors" />
-            <span>Download Resume</span>
+            <span>View Resume</span>
           </a>
         </div>
       </header>

@@ -6,8 +6,43 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'M. Shaheer Jamal Chishti',
-  description: 'Portfolio of Shaheer Jamal',
+  title: 'Muhammad Shaheer Jamal Chishti | Cloud Data Engineer & Software Developer',
+  description: 'Portfolio of Muhammad Shaheer Jamal Chishti. Cloud Data Engineer, Software Developer, and Tech Consultant specializing in AWS, Snowflake, Python, Java, and Next.js.',
+  keywords: [
+    'Shaheer Jamal', 
+    'Shaheer Jamal Vercel', 
+    'ShaheerJamal Vercel App', 
+    'Muhammad Shaheer Jamal Chishti', 
+    'Cloud Data Engineer', 
+    'Software Developer',
+    'Data Engineering',
+    'React Developer',
+    'Next.js',
+    'Python',
+    'Java',
+    'Pakistan'
+  ],
+  authors: [{ name: 'Muhammad Shaheer Jamal Chishti' }],
+  creator: 'Muhammad Shaheer Jamal Chishti',
+  openGraph: {
+    title: 'Shaheer Jamal | Cloud Data Engineer & Developer',
+    description: 'Explore my projects in Cloud Data Engineering, Data Analysis, and Software Development. Let\'s build scalable solutions.',
+    url: 'https://shaheerjamal.vercel.app',
+    siteName: 'Shaheer Jamal Portfolio',
+    locale: 'en_US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({

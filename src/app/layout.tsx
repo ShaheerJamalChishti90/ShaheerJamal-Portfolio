@@ -56,8 +56,9 @@ export default function RootLayout({
         {/* --- THIS LINK IS REQUIRED FOR ICONS TO SHOW UP --- */}
         <link 
           rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
+        <meta name="google-site-verification" content="wot6OUU9cVex1co7xBPahWMPvSwWljLZrM-id1ZCgus" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

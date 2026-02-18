@@ -50,7 +50,7 @@ const App: React.FC = () => {
             <a href="https://www.linkedin.com/in/m-shaheer-jamal-chishti-b75307272" target="_blank" className="text-4xl text-slate-500 hover:text-[#0A66C2] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-blue-500/20 rounded-full" title="LinkedIn"><FaLinkedin /></a>
             <a href="https://github.com/ShaheerJamalChishti90" target="_blank" className="text-4xl text-slate-500 hover:text-white transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/20 rounded-full" title="GitHub"><FaGithub /></a>
             <a href="mailto:shaheer.jamal09@gmail.com" className="text-4xl text-slate-500 hover:text-[#0078D4] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-[#0078D4]/20 rounded-full" title="Send Email (App)"><FaEnvelope /></a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shaheerjamalchishti@gmail.com" target="_blank" rel="noopener noreferrer" className="text-4xl text-slate-500 hover:text-[#EA4335] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" title="Open in Gmail Web"><FaGoogle /></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shaheer.jamal09@gmail.com" target="_blank" rel="noopener noreferrer" className="text-4xl text-slate-500 hover:text-[#EA4335] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" title="Open in Gmail Web"><FaGoogle /></a>
         </div>
 
         {/* --- RESUME VIEW BUTTON --- */}

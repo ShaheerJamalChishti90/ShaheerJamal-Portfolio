@@ -10,9 +10,13 @@ export const metadata: Metadata = {
   description: 'Portfolio of Muhammad Shaheer Jamal Chishti. Cloud Data Engineer, Software Developer, and Tech Consultant specializing in AWS, Snowflake, Python, Java, and Next.js.',
   keywords: [
     'Shaheer Jamal', 
+    'Shaheer Jamal Chishti', 
+    'shaheer jamal chishti', 
     'Shaheer Jamal Vercel', 
     'ShaheerJamal Vercel App', 
     'Muhammad Shaheer Jamal Chishti', 
+    'Muhammad Shaheer Jamal', 
+    'muhammad shaheer jamal', 
     'Cloud Data Engineer', 
     'Software Developer',
     'Data Engineering',
@@ -20,6 +24,8 @@ export const metadata: Metadata = {
     'Next.js',
     'Python',
     'Java',
+    'jamal chishti',
+    'chishti',
     'Pakistan'
   ],
   authors: [{ name: 'Muhammad Shaheer Jamal Chishti' }],

@@ -87,6 +87,12 @@ export const professionalCerts: Badge[] = [
     title: "Beginners guide to Ethical Hacking",
     image: "/images/Certificates/beginners_guide_to_ethicalhacking.png",
     link: "#"
+  },
+  {
+    id: 4,
+    title: "Cloud & DevOps Mastery Bootcamp",
+    image: "/images/Certificates/cloud&dev_ops.png",
+    link: "#"
   }
 ];
 

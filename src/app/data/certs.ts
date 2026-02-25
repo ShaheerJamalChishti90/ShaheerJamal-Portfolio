@@ -78,18 +78,30 @@ export const professionalCerts: Badge[] = [
   },
   {
     id: 2,
+    title: "Introduction to SQL",
+    image: "/images/Certificates/intro_to_sql.png",
+    link: "#"
+  },
+  {
+    id: 3,
+    title: "Intermediate SQL",
+    image: "/images/Certificates/intermediate_sql.png",
+    link: "#"
+  },
+  {
+    id: 4,
     title: "Prompt Engineering with Github Copilot",
     image: "/images/Certificates/prompt_engineering.png",
     link: "#"
   },
   {
-    id: 3,
+    id: 5,
     title: "Beginners guide to Ethical Hacking",
     image: "/images/Certificates/beginners_guide_to_ethicalhacking.png",
     link: "#"
   },
   {
-    id: 4,
+    id: 6,
     title: "Cloud & DevOps Mastery Bootcamp",
     image: "/images/Certificates/cloud&dev_ops.png",
     link: "#"

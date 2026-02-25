@@ -96,7 +96,7 @@ const App: React.FC = () => {
             {activeModal === 'cde' && (
               <>
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">Cloud Data Engineering Projects</h2>
-                <ProjectGrid projects={cdeProjects} />
+                <ProjectGrid projects={cdeProjects} showYoutubeNote={true} />
               </>
             )}
 

@@ -17,7 +17,7 @@ import InquiryForm from '../components/InquiryForm';
 import MeetingFunnel from '../components/MeetingFunnel';
 
 // --- ICON IMPORTS ---
-import { FaYoutube, FaLinkedin, FaGithub, FaEnvelope, FaGoogle, FaFileAlt, FaTimes, FaHeart, FaArrowRight, FaCalendarAlt } from 'react-icons/fa';
+import { FaYoutube, FaLinkedin, FaGithub, FaEnvelope, FaGoogle, FaFileAlt, FaTimes, FaHeart, FaArrowRight, FaCalendarAlt, FaRegistered } from 'react-icons/fa';
 
 const App: React.FC = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
@@ -183,7 +183,7 @@ const App: React.FC = () => {
       {/* --- FOOTER --- */}
       <footer className="text-center py-8 text-slate-600 text-sm relative z-10">
         <p className="mt-2 flex items-center justify-center gap-1">
-          Thank you <FaHeart className="text-red-900 mx-1" /> for visiting.
+          A project of SJC Tech Solutions<FaRegistered className="text-gray-900 mx-1" />.
         </p>
       </footer>
     </div>

@@ -182,8 +182,10 @@ const App: React.FC = () => {
 
       {/* --- FOOTER --- */}
       <footer className="text-center py-8 text-slate-600 text-sm relative z-10">
-        <p className="mt-2 flex items-center justify-center gap-1">
-          A project of SJC Tech Solutions<FaRegistered className="text-gray-900 mx-1" />.
+        <p className="flex items-center justify-center font-medium">
+          A project of SJC Tech Solutions
+          {/* Typographic approach: native char, raised (baseline), tight margins, subtle color */}
+          <sup className="text-xs text-zinc-600 ml-0.5" title="Registered Trademark">&reg;</sup>
         </p>
       </footer>
     </div>

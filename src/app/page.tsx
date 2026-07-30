@@ -1,195 +1,147 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt, FaTools, FaShieldAlt, FaCheckCircle, FaHourglassHalf, FaServer } from 'react-icons/fa';
 
-// --- IMPORTS ---
-import { cdeProjects } from './data/cde';
-import { freelanceProjects } from './data/freelance';
-import { softwareProjects } from './data/software';
-import { certifications } from './data/certs';
-
-import MainBlock from '../components/MainBlock';     
-import ProjectGrid from '../components/ProjectGrid'; 
-import CertGrid from '../components/CertGrid';
-
-// Import our new decoupled form components!
-import InquiryForm from '../components/InquiryForm';
-import MeetingFunnel from '../components/MeetingFunnel';
-
-// --- ICON IMPORTS ---
-import { FaYoutube, FaLinkedin, FaGithub, FaEnvelope, FaGoogle, FaFileAlt, FaTimes, FaHeart, FaArrowRight, FaCalendarAlt, FaRegistered } from 'react-icons/fa';
-
-const App: React.FC = () => {
-  const [activeModal, setActiveModal] = useState<string | null>(null);
+const UnderConstruction: React.FC = () => {
   const nameParts = ["Muhammad", "Shaheer", "Jamal", "Chishti"];
 
-  const closeModal = () => setActiveModal(null);
-
   return (
-    <div className="min-h-screen text-slate-200 bg-black font-sans relative overflow-x-hidden selection:bg-cyan-500/30">
+    <div className="min-h-screen bg-black text-slate-200 font-sans selection:bg-cyan-500/30 pb-20">
       
-      {/* --- HEADER --- */}
-      <header className="flex flex-col items-center justify-center pt-20 pb-12 px-4 text-center z-10 relative">
-        <div className="flex flex-wrap justify-center gap-3 md:gap-5 mb-4">
+      {/* --- HR / RECRUITER APOLOGY BANNER --- */}
+      <div className="bg-amber-950/40 border-b border-amber-900/50 p-4 flex justify-center">
+        <div className="max-w-4xl flex items-start gap-4 animate-in slide-in-from-top-5 duration-700">
+          <FaTools className="text-amber-500 text-2xl flex-shrink-0 mt-1" />
+          <div>
+            <h4 className="font-bold text-amber-400 mb-1 tracking-wide">Notice to Recruitment Teams & HR Professionals</h4>
+            <p className="text-sm text-amber-200/80 leading-relaxed">
+              I am currently migrating my portfolio to a dynamic, database-driven architecture to better showcase my work. I sincerely apologize for the limited view during this transition. Below is a focused snapshot of my qualifications, certifications, and target roles.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* --- HEADER & ABOUT SECTION --- */}
+      <header className="max-w-4xl mx-auto px-6 pt-16 text-center">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-6">
           {nameParts.map((name, index) => (
-            <div key={index} className="group relative cursor-pointer">
-              <div className="text-5xl md:text-7xl font-bold bg-cool-spectrum transition-all duration-500 ease-in-out group-hover:-translate-y-2">
-                {name}
-              </div>
+            <div key={index} className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+              {name}
             </div>
           ))}
         </div>
-        <p className="text-xl md:text-2xl text-slate-300 font-light mb-2 mt-2">Cloud Data Engineer & Developer</p>
-        <p className="text-slate-500 text-sm md:text-base max-w-2xl mx-auto mb-8 px-4">
-          Building scalable data pipelines with Kafka, Snowflake, & AWS, and developing robust software & mobile applications.
-        </p>
         
-        {/* --- SOCIAL ICONS --- */}
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 mb-8">
-            <a href="https://www.youtube.com/@cdewithshaheer" target="_blank" className="text-4xl text-slate-500 hover:text-[#FF0000] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" title="YouTube"><FaYoutube /></a>
-            <a href="https://www.linkedin.com/in/m-shaheer-jamal-chishti-b75307272" target="_blank" className="text-4xl text-slate-500 hover:text-[#0A66C2] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-blue-500/20 rounded-full" title="LinkedIn"><FaLinkedin /></a>
-            <a href="https://github.com/ShaheerJamalChishti90" target="_blank" className="text-4xl text-slate-500 hover:text-white transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/20 rounded-full" title="GitHub"><FaGithub /></a>
-            <a href="mailto:shaheer.jamal09@gmail.com" className="text-4xl text-slate-500 hover:text-[#0078D4] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-[#0078D4]/20 rounded-full" title="Send Email (App)"><FaEnvelope /></a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shaheer.jamal09@gmail.com" target="_blank" rel="noopener noreferrer" className="text-4xl text-slate-500 hover:text-[#EA4335] transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/20 rounded-full" title="Open in Gmail Web"><FaGoogle /></a>
+        <h2 className="text-2xl font-semibold text-slate-300 mb-8 flex items-center justify-center gap-3">
+          <FaShieldAlt className="text-cyan-500" />
+          Targeting SOC Analyst Roles
+        </h2>
+
+        <div className="bg-zinc-900/50 border border-zinc-800 p-8 rounded-2xl text-left shadow-lg mb-12">
+          <h3 className="text-xl font-bold text-cyan-400 mb-4">About Me</h3>
+          <p className="text-slate-400 leading-relaxed mb-4">
+            I am a Computer Science student with a dedicated focus on Defensive Security. My technical foundation is built on analyzing network security protocols, understanding threat analysis methodologies, and safeguarding enterprise networking environments. 
+          </p>
+          <p className="text-slate-400 leading-relaxed">
+            My goal is to leverage my academic background and hands-on project experience to actively monitor, detect, and mitigate cyber threats as a SOC Analyst, contributing to robust organizational security postures.
+          </p>
         </div>
 
-        {/* --- RESUME VIEW BUTTON --- */}
-        <div>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="relative inline-flex items-center gap-3 px-8 py-3 bg-zinc-900 border border-zinc-700 rounded-full text-slate-200 font-bold tracking-wide transition-all duration-300 hover:bg-zinc-800 hover:text-white hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:-translate-y-1 group cursor-pointer">
-            <FaFileAlt className="group-hover:text-cyan-400 transition-colors" />
+        {/* --- SOCIAL & RESUME LINKS --- */}
+        <div className="flex flex-wrap justify-center items-center gap-6 mb-16">
+          <a href="https://www.linkedin.com/in/m-shaheer-jamal-chishti-b75307272" target="_blank" rel="noopener noreferrer" className="text-3xl text-slate-500 hover:text-[#0A66C2] transition-transform hover:scale-110" title="LinkedIn"><FaLinkedin /></a>
+          <a href="https://github.com/ShaheerJamalChishti90" target="_blank" rel="noopener noreferrer" className="text-3xl text-slate-500 hover:text-white transition-transform hover:scale-110" title="GitHub"><FaGithub /></a>
+          <a href="mailto:shaheerjamalchishti@gmail.com" className="text-3xl text-slate-500 hover:text-[#0078D4] transition-transform hover:scale-110" title="Email"><FaEnvelope /></a>
+          
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="ml-4 inline-flex items-center gap-2 px-6 py-2.5 bg-cyan-950/30 border border-cyan-900/50 rounded-full text-cyan-400 font-bold hover:bg-cyan-900/50 hover:text-cyan-300 transition-all">
+            <FaFileAlt />
             <span>View Resume</span>
           </a>
         </div>
       </header>
 
-      {/* --- MAIN 4-BLOCK GRID --- */}
-      <main className="max-w-7xl mx-auto px-6 pb-20 grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
-        <MainBlock title="Cloud Data Engineering" desc="14+ End-to-End Projects featuring AWS, Kafka, Airflow & Snowflake." iconClass="fas fa-cloud" hoverTextColor="text-cyan-400" gradientColors="from-cyan-500 via-blue-600 to-purple-600" onClick={() => setActiveModal('cde')} />
-        <MainBlock title="Certifications" desc="Snowflake Badges, AWS Certifications & Professional Milestones." iconClass="fas fa-certificate" hoverTextColor="text-purple-400" gradientColors="from-purple-500 via-pink-600 to-fuchsia-600" onClick={() => setActiveModal('certs')} />
-        <MainBlock title="Software & Scripting Hub" desc="My playground for Python, JS, Java, C++, and HTML/CSS." iconClass="fas fa-code" hoverTextColor="text-emerald-400" gradientColors="from-cyan-500 via-emerald-500 to-teal-600" onClick={() => setActiveModal('learn')} />
-        <MainBlock title="Freelancing Projects" desc="Client deliverables including Attendance & Student Management Systems." iconClass="fas fa-briefcase" hoverTextColor="text-orange-400" gradientColors="from-orange-400 via-red-500 to-yellow-500" onClick={() => setActiveModal('freelance')} />
+      <main className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        {/* --- CERTIFICATIONS LIST --- */}
+        <div className="space-y-8">
+          
+          {/* Completed */}
+          <div>
+            <h3 className="text-xl font-bold text-slate-200 mb-4 flex items-center gap-2">
+              <FaCheckCircle className="text-emerald-500" />
+              Completed Certifications
+            </h3>
+            <div className="space-y-3">
+              {/* Edit these links to match your actual verification URLs */}
+              <a href="#" className="block bg-zinc-900 border border-zinc-800 p-4 rounded-xl hover:border-emerald-500/50 transition-colors group">
+                <div className="font-bold text-slate-300 group-hover:text-emerald-400 transition-colors">Google: Introduction to Cybersecurity</div>
+                <div className="text-sm text-slate-500">Google</div>
+              </a>
+              <a href="#" className="block bg-zinc-900 border border-zinc-800 p-4 rounded-xl hover:border-emerald-500/50 transition-colors group">
+                <div className="font-bold text-slate-300 group-hover:text-emerald-400 transition-colors">Harvard: Cybersecurity</div>
+                <div className="text-sm text-slate-500">Harvard University</div>
+              </a>
+              <a href="#" className="block bg-zinc-900 border border-zinc-800 p-4 rounded-xl hover:border-emerald-500/50 transition-colors group">
+                <div className="font-bold text-slate-300 group-hover:text-emerald-400 transition-colors">Beginners Guide to Ethical Hacking</div>
+                <div className="text-sm text-slate-500">Professional Credential</div>
+              </a>
+            </div>
+          </div>
 
-        {/* === 5TH BLOCK: CENTERED === */}
-        <div className="md:col-span-2 flex justify-center mt-4">
-          <div className="w-full md:w-2/3 lg:w-1/2">
-            <MainBlock 
-              title="Connect & Collaborate" 
-              desc="Schedule a consultation or reach out for custom data engineering, web development and software development services." 
-              iconClass="fas fa-envelope-open-text" 
-              hoverTextColor="text-cyan-400" 
-              gradientColors="from-cyan-600 via-blue-500 to-teal-400" 
-              onClick={() => setActiveModal('contact')} 
-            />
+          {/* In Progress */}
+          <div>
+            <h3 className="text-xl font-bold text-slate-200 mb-4 flex items-center gap-2">
+              <FaHourglassHalf className="text-blue-500" />
+              Currently Pursuing
+            </h3>
+            <div className="space-y-3">
+              <div className="bg-zinc-900/50 border border-zinc-800/50 p-4 rounded-xl opacity-80">
+                <div className="font-bold text-blue-400">CompTIA Network+</div>
+                <div className="text-sm text-slate-500">Focusing on foundational networking infrastructure</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* --- CYBERSECURITY PROJECTS --- */}
+        <div>
+          <h3 className="text-xl font-bold text-slate-200 mb-4 flex items-center gap-2">
+            <FaServer className="text-purple-500" />
+            Security Projects
+          </h3>
+          <div className="space-y-4">
+            
+            {/* Project 1 */}
+            <div className="bg-zinc-900 border border-zinc-800 p-5 rounded-xl hover:border-purple-500/50 transition-colors group">
+              <h4 className="font-bold text-slate-200 group-hover:text-purple-400 transition-colors mb-2">Intrusion Detection System (IDS) Analysis</h4>
+              <p className="text-sm text-slate-400 mb-4">
+                Developed comprehensive documentation and flowchart logic mapping out an Intrusion Detection System for a university data structures and algorithms implementation.
+              </p>
+              <a href="https://github.com/ShaheerJamalChishti90" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors">
+                <FaGithub className="text-lg" />
+                <span>View on GitHub</span>
+              </a>
+            </div>
+
+            {/* Project 2 (Placeholder - Update with your own) */}
+            <div className="bg-zinc-900 border border-zinc-800 p-5 rounded-xl hover:border-purple-500/50 transition-colors group">
+              <h4 className="font-bold text-slate-200 group-hover:text-purple-400 transition-colors mb-2">Network Traffic Analyzer</h4>
+              <p className="text-sm text-slate-400 mb-4">
+                [Placeholder] A custom script utilized to capture, parse, and flag suspicious packet behaviors within a simulated network environment.
+              </p>
+              <a href="https://github.com/ShaheerJamalChishti90" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors">
+                <FaGithub className="text-lg" />
+                <span>View on GitHub</span>
+              </a>
+            </div>
+
           </div>
         </div>
+
       </main>
-
-      {/* --- MODALS OVERLAY --- */}
-      <div className={`fixed inset-0 bg-black/95 z-50 flex justify-center items-start overflow-y-auto p-4 backdrop-blur-md transition-opacity duration-500 ${activeModal ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={closeModal}>
-        {activeModal && (
-        <div className="bg-[#0a0a0a] border border-zinc-800 w-full max-w-5xl rounded-xl p-8 md:p-12 my-10 relative shadow-2xl animate-in fade-in zoom-in-95 duration-300" onClick={(e) => e.stopPropagation()}>
-            <button onClick={closeModal} className="absolute top-6 right-6 text-zinc-500 hover:text-white text-2xl transition-colors duration-300">
-              <FaTimes />
-            </button>
-
-            {/* BLOCK 1 CONTENT */}
-            {activeModal === 'cde' && (
-              <>
-                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">Cloud Data Engineering Projects</h2>
-                <ProjectGrid projects={cdeProjects} showYoutubeNote={true} />
-              </>
-            )}
-
-            {/* BLOCK 2 CONTENT */}
-            {activeModal === 'certs' && (
-              <>
-                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-8">Certifications</h2>
-                <CertGrid certificates={certifications} />
-              </>
-            )}
-
-            {/* BLOCK 3 CONTENT */}
-            {activeModal === 'learn' && (
-              <>
-                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 mb-2">Software & Scripting Hub</h2>
-                <ProjectGrid projects={softwareProjects} color="emerald" />
-              </>
-            )}
-
-            {/* BLOCK 4 CONTENT */}
-            {activeModal === 'freelance' && (
-               <>
-                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400 mb-2">Freelancing Projects</h2>
-                <ProjectGrid projects={freelanceProjects} color="purple" />
-              </>
-            )}
-
-            {/* === BLOCK 5 CONTENT (CONTACT OPTIONS MENU) === */}
-            {activeModal === 'contact' && (
-              <div className="max-w-4xl mx-auto animate-in fade-in duration-500 pt-4">
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-4 tracking-tight">Let's Work Together</h2>
-                  <p className="text-slate-400 text-lg max-w-2xl mx-auto">Select a method below to inquire about services, request a quote, or schedule a 1-on-1 consultation.</p>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  
-                  {/* Option 1: Form Button */}
-                  <div className="group bg-zinc-900/50 border border-zinc-800 p-8 rounded-2xl flex flex-col items-center text-center hover:border-cyan-500/50 hover:bg-zinc-900 transition-all duration-300 shadow-lg hover:shadow-cyan-900/20 hover:-translate-y-1">
-                    <div className="w-20 h-20 bg-cyan-500/10 rounded-full flex items-center justify-center mb-6 text-cyan-400 text-3xl group-hover:scale-110 transition-transform">
-                      <FaEnvelope />
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-200 mb-3 group-hover:text-cyan-400 transition-colors">Send an Inquiry</h3>
-                    <p className="text-sm text-slate-400 mb-8 leading-relaxed">Use our secure form to send a direct message. Ideal for detailed project requirements or general questions.</p>
-                    
-                    <button 
-                      onClick={() => setActiveModal('contact-form')}
-                      className="mt-auto px-6 py-4 w-full bg-zinc-800 hover:bg-cyan-600 text-slate-200 hover:text-white font-bold rounded-xl transition-all flex justify-center items-center gap-3"
-                    >
-                      <span>Open Form</span>
-                      <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
-
-                  {/* Option 2: Calendly Button */}
-                  <div className="group bg-zinc-900/50 border border-zinc-800 p-8 rounded-2xl flex flex-col items-center text-center hover:border-blue-500/50 hover:bg-zinc-900 transition-all duration-300 shadow-lg hover:shadow-blue-900/20 hover:-translate-y-1">
-                    <div className="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center mb-6 text-blue-400 text-3xl group-hover:scale-110 transition-transform">
-                      <FaCalendarAlt />
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-200 mb-3 group-hover:text-blue-400 transition-colors">Book a Meeting</h3>
-                    <p className="text-sm text-slate-400 mb-8 leading-relaxed">Schedule a dedicated time slot via our custom calendar logic to discuss your specific business needs via video call.</p>
-                    
-                    <button 
-                      onClick={() => setActiveModal('meeting-funnel')}
-                      className="mt-auto px-6 py-4 w-full bg-zinc-800 hover:bg-blue-600 text-slate-200 hover:text-white font-bold rounded-xl transition-all flex justify-center items-center gap-3"
-                    >
-                      <span>Schedule Call</span>
-                      <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
-
-                </div>
-              </div>
-            )}
-
-            {/* RENDER THE IMPORTED COMPONENTS BASED ON STATE */}
-            {activeModal === 'contact-form' && <InquiryForm onBack={() => setActiveModal('contact')} />}
-            {activeModal === 'meeting-funnel' && <MeetingFunnel onBack={() => setActiveModal('contact')} />}
-            
-          </div>
-        )}
-      </div>
-
-      {/* --- FOOTER --- */}
-      <footer className="text-center py-8 text-slate-600 text-sm relative z-10">
-        <p className="flex items-center justify-center font-medium">
-          A project of SJC Tech Solutions
-          {/* Typographic approach: native char, raised (baseline), tight margins, subtle color */}
-          <sup className="text-xs text-zinc-600 ml-0.5" title="Registered Trademark">&reg;</sup>
-        </p>
-      </footer>
     </div>
   );
 };
 
-export default App;
+export default UnderConstruction;

@@ -37,7 +37,7 @@ export const certifications: Certificate[] = [
 // 2. The Detailed Badges
 export const snowflakeBadges: Badge[] = [
   {
-    id: 1 ,
+    id: 1,
     title: "Data Lake",
     image: "/images/Data Lake.png",
     link: "https://www.credential.net/profile/muhammadshaheerjamalchishti487127/wallet"
@@ -78,30 +78,48 @@ export const professionalCerts: Badge[] = [
   },
   {
     id: 2,
+    title: "Harvard: CYBERSECURITY",
+    image: "/images/Certificates/harvard_cys.png",
+    link: "https://cs50.harvard.edu/certificates/01c2026f-ee29-409f-8939-fe8bd2226397"
+  },
+  {
+    id: 3,
+    title: "Google: Introduction to Cybersecurity",
+    image: "/images/Certificates/google_cys.png",
+    link: "https://coursera.org/share/9afec1e144ced5525a94b3677163d250"
+  },
+  {
+    id: 4, // Fixed ID
     title: "Introduction to SQL",
     image: "/images/Certificates/intro_to_sql.png",
     link: "#"
   },
   {
-    id: 3,
+    id: 5, // Fixed ID
     title: "Intermediate SQL",
     image: "/images/Certificates/intermediate_sql.png",
     link: "#"
   },
   {
-    id: 4,
+    id: 6, // Fixed ID
+    title: "Fundamentals of Networking",
+    image: "/images/Certificates/fund_networking.png",
+    link: "#"
+  },
+  {
+    id: 7, // Fixed ID
     title: "Prompt Engineering with Github Copilot",
     image: "/images/Certificates/prompt_engineering.png",
     link: "#"
   },
   {
-    id: 5,
+    id: 8, // Fixed ID
     title: "Beginners guide to Ethical Hacking",
     image: "/images/Certificates/beginners_guide_to_ethicalhacking.png",
     link: "#"
   },
   {
-    id: 6,
+    id: 9, // Fixed ID
     title: "Cloud & DevOps Mastery Bootcamp",
     image: "/images/Certificates/cloud&dev_ops.png",
     link: "#"

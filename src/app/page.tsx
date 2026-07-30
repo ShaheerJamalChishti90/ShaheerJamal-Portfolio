@@ -44,6 +44,8 @@ const UnderConstruction: React.FC = () => {
           </p>
           <p className="text-slate-300 leading-relaxed text-base md:text-lg">
             My goal is to leverage my academic background and hands-on project experience to actively monitor, detect, and mitigate cyber threats as a SOC Analyst, contributing to robust organizational security postures.
+	    <br>
+	     Mail me: shaheerjamal369@gmail.com
           </p>
         </div>
 
@@ -51,7 +53,6 @@ const UnderConstruction: React.FC = () => {
         <div className="flex flex-wrap justify-center items-center gap-6 mb-20">
           <a href="https://www.linkedin.com/in/m-shaheer-jamal-chishti-b75307272" target="_blank" rel="noopener noreferrer" className="text-3xl text-slate-500 hover:text-[#0A66C2] transition-transform hover:scale-110" title="LinkedIn"><FaLinkedin /></a>
           <a href="https://github.com/ShaheerJamalChishti90" target="_blank" rel="noopener noreferrer" className="text-3xl text-slate-500 hover:text-white transition-transform hover:scale-110" title="GitHub"><FaGithub /></a>
-          <a href="mailto:shaheerjamalchishti@gmail.com" className="text-3xl text-slate-500 hover:text-[#0078D4] transition-transform hover:scale-110" title="Email"><FaEnvelope /></a>
           
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="ml-4 inline-flex items-center gap-2 px-8 py-3 bg-cyan-950/30 border border-cyan-900/50 rounded-full text-cyan-400 font-bold hover:bg-cyan-900/50 hover:text-cyan-300 transition-all hover:shadow-[0_0_15px_rgba(6,182,212,0.3)]">
             <FaFileAlt />

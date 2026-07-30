@@ -23,9 +23,9 @@ const UnderConstruction: React.FC = () => {
       {/* --- HEADER & ABOUT SECTION --- */}
       <header className="max-w-5xl mx-auto px-6 pt-16 text-center">
         
-        {/* Name (Single line, larger, continuous gradient) */}
-        <div className="mb-6 flex justify-center overflow-hidden py-2">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-300 md:whitespace-nowrap tracking-tight">
+		{/* Name (Responsive, single-line, no cutoff) */}
+        <div className="mb-6 flex justify-center w-full py-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-300 md:whitespace-nowrap tracking-tight">
             Muhammad Shaheer Jamal Chishti
           </h1>
         </div>
@@ -33,14 +33,14 @@ const UnderConstruction: React.FC = () => {
         {/* Updated Professional Title */}
         <h2 className="text-xl md:text-2xl font-semibold text-slate-300 mb-10 flex items-center justify-center gap-3">
           <FaShieldAlt className="text-cyan-500" />
-          Defensive Security & Computer Science Student
+          Targeting SOC Analyst Roles
         </h2>
 
         {/* Updated About Me */}
         <div className="bg-zinc-900/50 border border-zinc-800 p-8 rounded-2xl text-left shadow-lg mb-12">
           <h3 className="text-xl font-bold text-cyan-400 mb-4">About Me</h3>
           <p className="text-slate-300 leading-relaxed mb-4 text-base md:text-lg">
-            I am a Bachelors of Computer Science student at Sir Syed University of Engineering & Technology with a dedicated focus on Defensive Security. My technical foundation is built on analyzing network security protocols, understanding threat analysis methodologies, and safeguarding enterprise networking environments.
+            I am a Bachelors of Cybersecurity student at Sir Syed University of Engineering & Technology with a dedicated focus on Defensive Security. My technical foundation is built on analyzing network security protocols, understanding threat analysis methodologies, and safeguarding enterprise networking environments.
           </p>
           <p className="text-slate-300 leading-relaxed text-base md:text-lg">
             My goal is to leverage my academic background and hands-on project experience to actively monitor, detect, and mitigate cyber threats as a SOC Analyst, contributing to robust organizational security postures.

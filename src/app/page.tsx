@@ -33,7 +33,7 @@ const UnderConstruction: React.FC = () => {
         {/* Updated Professional Title */}
         <h2 className="text-xl md:text-2xl font-semibold text-slate-300 mb-10 flex items-center justify-center gap-3">
           <FaShieldAlt className="text-cyan-500" />
-          Targeting SOC Analyst Roles
+          Defensive Security | SOC Analyst 
         </h2>
 
         {/* Updated About Me */}

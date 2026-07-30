@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt, FaTools, FaShieldAlt, FaCheckCircle, FaHourglassHalf, FaServer, FaYoutube, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFileAlt, FaTools, FaShieldAlt, FaCheckCircle, FaHourglassHalf, FaServer, FaYoutube, FaExternalLinkAlt } from 'react-icons/fa';
 
 const UnderConstruction: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ const UnderConstruction: React.FC = () => {
       {/* --- HEADER & ABOUT SECTION --- */}
       <header className="max-w-5xl mx-auto px-6 pt-16 text-center">
         
-		{/* Name (Responsive, single-line, no cutoff) */}
+        {/* Name (Responsive, single-line, no cutoff) */}
         <div className="mb-6 flex justify-center w-full py-2">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-300 md:whitespace-nowrap tracking-tight">
             Muhammad Shaheer Jamal Chishti
@@ -42,11 +42,17 @@ const UnderConstruction: React.FC = () => {
           <p className="text-slate-300 leading-relaxed mb-4 text-base md:text-lg">
             I am a Bachelors of Cybersecurity student at Sir Syed University of Engineering & Technology with a dedicated focus on Defensive Security. My technical foundation is built on analyzing network security protocols, understanding threat analysis methodologies, and safeguarding enterprise networking environments.
           </p>
-          <p className="text-slate-300 leading-relaxed text-base md:text-lg">
+          <p className="text-slate-300 leading-relaxed text-base md:text-lg mb-6">
             My goal is to leverage my academic background and hands-on project experience to actively monitor, detect, and mitigate cyber threats as a SOC Analyst, contributing to robust organizational security postures.
-	    <br>
-	     Mail me: shaheerjamal369@gmail.com
           </p>
+          
+          {/* Plain Text Contact Info */}
+          <div className="pt-4 border-t border-zinc-800">
+            <p className="text-slate-300 leading-relaxed text-base md:text-lg">
+              My cell phone number: xyz <br />
+              My mail: shaheerjamal369@gmail.com
+            </p>
+          </div>
         </div>
 
         {/* --- SOCIAL & RESUME LINKS --- */}

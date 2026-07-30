@@ -49,7 +49,7 @@ const UnderConstruction: React.FC = () => {
           {/* Plain Text Contact Info */}
           <div className="pt-4 border-t border-zinc-800">
             <p className="text-slate-300 leading-relaxed text-base md:text-lg">
-              My cell phone number: xyz <br />
+             
               My mail: shaheerjamal369@gmail.com
             </p>
           </div>
